@@ -12,7 +12,7 @@ function App() {
   return (
     <Router>
       <Login path="/login" default />
-      <Signup path="/signup" default />
+      <Signup path="/signup" />
       <Home path="/" />
       <Stats path="/stats" />
       <Settings path="/settings" />
