@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import { Router } from "@reach/router";
 import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 import Home from "./pages/Home";
 import Stats from "./pages/Stats";
 import Settings from "./pages/Settings";
@@ -11,6 +12,7 @@ function App() {
   return (
     <Router>
       <Login path="/login" default />
+      <Signup path="/signup" default />
       <Home path="/" />
       <Stats path="/stats" />
       <Settings path="/settings" />
