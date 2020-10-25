@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import Stats from "./pages/Stats";
 import Settings from "./pages/Settings";
 import Summary from "./pages/Summary";
+import CreateDet from "./pages/CreateDet";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Home path="/" />
       <Stats path="/stats" />
       <Settings path="/settings" />
+      <CreateDet path="/settings/create" />
       <Summary path="/summary" />
     </Router>
   );
