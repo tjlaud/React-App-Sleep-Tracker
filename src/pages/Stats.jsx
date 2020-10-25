@@ -1,5 +1,6 @@
 import React from "react";
-import { Box } from '@material-ui/core';
+import { Box, Fab } from '@material-ui/core';
+import AddIcon from '@material-ui/icons/Add';
 import Navbar from '../components/Navbar';
 import Headline from '../components/Headline';
 import Sleep from '../components/Sleep';
@@ -19,6 +20,10 @@ function Stats() {
     >
       <Headline />
       <Sleep />
+      <br/>
+      <Fab>
+        <AddIcon />
+      </Fab>
       <Navbar />
     </Box>
   );
