@@ -8,6 +8,7 @@ import Stats from "./pages/Stats";
 import Settings from "./pages/Settings";
 import Summary from "./pages/Summary";
 import CreateDet from "./pages/CreateDet";
+import ManageDet from "./pages/ManageDet";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Stats path="/stats" />
       <Settings path="/settings" />
       <CreateDet path="/settings/create" />
+      <ManageDet path="/settings/manage" />
       <Summary path="/summary" />
     </Router>
   );
