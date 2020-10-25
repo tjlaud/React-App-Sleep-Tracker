@@ -20,12 +20,12 @@ function Navbar() {
     >
       <BottomNavigationAction label="Home" value="home" icon={<HomeIcon />} />
       <BottomNavigationAction
-        label="Personal Stats"
+        label="Personal"
         value="person"
         icon={<PersonIcon />}
       />
       <BottomNavigationAction
-        label="Group Stats"
+        label="Group"
         value="groupStats"
         icon={<GroupIcon />}
       />
