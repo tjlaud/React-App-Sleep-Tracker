@@ -35,6 +35,9 @@ function ManageDet() {
     <List>
       <Person/>
     </List>
+    <br/>
+
+    <Button variant='contained' color='secondary'>Delete Det</Button>
       
     <Navbar/>
   </Box>)
