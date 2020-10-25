@@ -19,7 +19,7 @@ function Sleep() {
         }}
         />
         <TextField
-        label="To"
+        label="From"
         type="datetime-local"
         defaultValue="2017-05-24T10:30"
         InputLabelProps={{
