@@ -1,14 +1,14 @@
 import React from "react";
-import { Box, Fab } from '@material-ui/core';
-import AddIcon from '@material-ui/icons/Add';
-import Navbar from '../components/Navbar';
-import Headline from '../components/Headline';
-import Sleep from '../components/Sleep';
+import { Box, Fab } from "@material-ui/core";
+import AddIcon from "@material-ui/icons/Add";
+import Navbar from "../components/Navbar";
+import Headline from "../components/Headline";
+import Sleep from "../components/Sleep";
 
 function Stats() {
   return (
     <Box
-    style={{
+      style={{
         display: "flex",
         flexDirection: "column",
         width: "50%",
@@ -20,7 +20,7 @@ function Stats() {
     >
       <Headline />
       <Sleep />
-      <br/>
+      <br />
       <Fab>
         <AddIcon />
       </Fab>

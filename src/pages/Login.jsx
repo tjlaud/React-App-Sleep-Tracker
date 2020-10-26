@@ -1,5 +1,5 @@
 import React from "react";
-import { TextField, Button, Box,  } from "@material-ui/core";
+import { TextField, Button, Box } from "@material-ui/core";
 
 function Login() {
   return (
@@ -22,7 +22,6 @@ function Login() {
       <Button variant="contained" color="secondary">
         Create Account
       </Button>
-
     </Box>
   );
 }

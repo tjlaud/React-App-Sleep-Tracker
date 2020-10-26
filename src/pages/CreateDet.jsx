@@ -1,12 +1,11 @@
 import React from "react";
-import { Box, TextField, Button } from '@material-ui/core';
-import Navbar from '../components/Navbar';
+import { Box, TextField, Button } from "@material-ui/core";
+import Navbar from "../components/Navbar";
 
 function CreateDet() {
-  
   return (
-  <Box
-    style={{
+    <Box
+      style={{
         display: "flex",
         flexDirection: "column",
         width: "50%",
@@ -16,12 +15,15 @@ function CreateDet() {
         padding: "5vh",
       }}
     >
-      <TextField variant='outlined' label='Enter Det name'/>
-      <br/>
-      <Button variant='contained' color='primary'>Create Det</Button>
-      
-      <Navbar/>
-    </Box>)
+      <TextField variant="outlined" label="Enter Det name" />
+      <br />
+      <Button variant="contained" color="primary">
+        Create Det
+      </Button>
+
+      <Navbar />
+    </Box>
+  );
 }
 
 export default CreateDet;
