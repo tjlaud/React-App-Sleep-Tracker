@@ -1,8 +1,11 @@
 import React from "react";
+import { useNavigate } from "@reach/router";
 import { Box, TextField, Button } from "@material-ui/core";
 import Navbar from "../components/Navbar";
 
 function CreateDet() {
+  const navigate = useNavigate();
+
   return (
     <Box
       style={{
@@ -17,7 +20,13 @@ function CreateDet() {
     >
       <TextField variant="outlined" label="Enter Det name" />
       <br />
-      <Button variant="contained" color="primary">
+      <Button
+        variant="contained"
+        color="primary"
+        onClick={() => {
+          navigate("/settings/manage");
+        }}
+      >
         Create Det
       </Button>
 

@@ -19,7 +19,13 @@ function Login() {
     >
       <TextField label="User Name" variant="outlined" />
       <TextField label="Password" variant="outlined" />
-      <Button variant="contained" color="primary">
+      <Button
+        variant="contained"
+        color="primary"
+        onClick={() => {
+          navigate("/");
+        }}
+      >
         Login
       </Button>
       <Button
