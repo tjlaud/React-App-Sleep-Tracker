@@ -1,5 +1,4 @@
 import React from "react";
-import { useNavigate } from "@reach/router";
 import {
   Box,
   TextField,
@@ -11,9 +10,7 @@ import {
 } from "@material-ui/core";
 import Navbar from "../components/Navbar";
 
-function Settings() {
-  const navigate = useNavigate();
-
+function Settings({ navigate }) {
   return (
     <Box
       style={{
@@ -54,7 +51,7 @@ function Settings() {
         variant="contained"
         color="primary"
         onClick={() => {
-          navigate("/settings/create");
+          navigate("create");
         }}
       >
         Create a det
@@ -64,7 +61,7 @@ function Settings() {
         variant="contained"
         color="primary"
         onClick={() => {
-          navigate("/settings/manage");
+          navigate("manage");
         }}
       >
         Manage a det

@@ -1,10 +1,7 @@
 import React from "react";
-import { useNavigate } from "@reach/router";
 import { TextField, Button, Box } from "@material-ui/core";
 
-function Signup() {
-  const navigate = useNavigate();
-
+function Signup({ navigate }) {
   return (
     <Box
       style={{

@@ -8,9 +8,9 @@ import SettingsIcon from "@material-ui/icons/Settings";
 
 function Navbar() {
   const [value, setValue] = useState("home");
+  const navigate = useNavigate();
 
   const location = useLocation();
-  const navigate = useNavigate();
 
   useEffect(() => {
     const path = location.pathname;

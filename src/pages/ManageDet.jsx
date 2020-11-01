@@ -12,7 +12,7 @@ import {
 import Navbar from "../components/Navbar";
 import Person from "../components/Person";
 
-function ManageDet() {
+function ManageDet({ navigate }) {
   return (
     <Box
       style={{
@@ -47,7 +47,13 @@ function ManageDet() {
       </List>
       <br />
 
-      <Button variant="contained" color="secondary">
+      <Button
+        variant="contained"
+        color="secondary"
+        onClick={() => {
+          navigate("/settings");
+        }}
+      >
         Delete Det
       </Button>
 
