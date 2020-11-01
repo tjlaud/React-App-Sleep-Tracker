@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { TextField, Button, Box } from "@material-ui/core";
 
 function Login({ navigate }) {
+  const [userName, setUserName] = useState("");
+  const [password, setPassword] = useState("");
+
   return (
     <Box
       style={{
@@ -14,8 +17,20 @@ function Login({ navigate }) {
         padding: "5vh",
       }}
     >
-      <TextField label="User Name" variant="outlined" />
-      <TextField label="Password" variant="outlined" />
+      <TextField
+        label="User Name"
+        variant="outlined"
+        onChange={(e) => {
+          setUserName(e.target.value);
+        }}
+      />
+      <TextField
+        label="Password"
+        variant="outlined"
+        onChange={(e) => {
+          setPassword(e.target.value);
+        }}
+      />
       <Button
         variant="contained"
         color="primary"
