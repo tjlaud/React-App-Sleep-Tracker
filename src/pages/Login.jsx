@@ -1,7 +1,10 @@
 import React from "react";
+import { useNavigate } from "@reach/router";
 import { TextField, Button, Box } from "@material-ui/core";
 
 function Login() {
+  const navigate = useNavigate();
+
   return (
     <Box
       style={{
@@ -19,7 +22,13 @@ function Login() {
       <Button variant="contained" color="primary">
         Login
       </Button>
-      <Button variant="contained" color="secondary">
+      <Button
+        variant="contained"
+        color="secondary"
+        onClick={() => {
+          navigate("/signup");
+        }}
+      >
         Create Account
       </Button>
     </Box>
