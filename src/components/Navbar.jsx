@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useLocation, useNavigate } from "@reach/router";
 import { BottomNavigationAction, BottomNavigation } from "@material-ui/core";
 import GroupIcon from "@material-ui/icons/Group";
 import PersonIcon from "@material-ui/icons/Person";
@@ -8,31 +9,53 @@ import SettingsIcon from "@material-ui/icons/Settings";
 function Navbar() {
   const [value, setValue] = useState("home");
 
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const path = location.pathname;
+    setValue(path.split("/")[1]);
+  }, []);
+
+  // if we make the navbar stay on the page we'll want to use this,
+  // pass it in as an onChange prop to <BottomNavigation>
+  // const handleChange = (event, newValue) => {
+  //   setValue(newValue);
+  // };
 
   return (
-    <BottomNavigation
-      value={value}
-      onChange={handleChange}
-      style={{ backgroundColor: "white" }}
-    >
-      <BottomNavigationAction label="Home" value="home" icon={<HomeIcon />} />
+    <BottomNavigation value={value} style={{ backgroundColor: "white" }}>
+      <BottomNavigationAction
+        label="Home"
+        value=""
+        icon={<HomeIcon />}
+        onClick={() => {
+          navigate("/");
+        }}
+      />
       <BottomNavigationAction
         label="Personal"
-        value="person"
+        value="stats"
         icon={<PersonIcon />}
+        onClick={() => {
+          navigate("/stats");
+        }}
       />
       <BottomNavigationAction
         label="Group"
-        value="groupStats"
+        value="summary"
         icon={<GroupIcon />}
+        onClick={() => {
+          navigate("/summary");
+        }}
       />
       <BottomNavigationAction
         label="Settings"
         value="settings"
         icon={<SettingsIcon />}
+        onClick={() => {
+          navigate("/settings");
+        }}
       />
     </BottomNavigation>
   );
