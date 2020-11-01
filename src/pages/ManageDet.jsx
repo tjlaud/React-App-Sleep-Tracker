@@ -27,7 +27,7 @@ function ManageDet() {
     >
       <FormControl variant="outlined" style={{ width: "80%" }}>
         <InputLabel id="det">Select a det</InputLabel>
-        <Select id="det">
+        <Select id="det" value="">
           <MenuItem value="20-1">20-1</MenuItem>
           <MenuItem value="20-2">20-2</MenuItem>
           <MenuItem value="20-3">20-3</MenuItem>

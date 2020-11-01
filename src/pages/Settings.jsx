@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "@reach/router";
 import {
   Box,
   TextField,
@@ -11,6 +12,8 @@ import {
 import Navbar from "../components/Navbar";
 
 function Settings() {
+  const navigate = useNavigate();
+
   return (
     <Box
       style={{
@@ -47,11 +50,23 @@ function Settings() {
         Join det
       </Button>
       <br />
-      <Button variant="contained" color="primary">
+      <Button
+        variant="contained"
+        color="primary"
+        onClick={() => {
+          navigate("/settings/create");
+        }}
+      >
         Create a det
       </Button>
       <br />
-      <Button variant="contained" color="primary">
+      <Button
+        variant="contained"
+        color="primary"
+        onClick={() => {
+          navigate("/settings/manage");
+        }}
+      >
         Manage a det
       </Button>
       <Navbar />
