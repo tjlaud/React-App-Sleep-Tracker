@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { TextField, Button, Box } from "@material-ui/core";
 
 function Signup({ navigate }) {
+  const [email, setEmail] = useState("");
+  const [userName, setUserName] = useState("");
+  const [password, setPassword] = useState("");
   return (
     <Box
       style={{
@@ -14,9 +17,30 @@ function Signup({ navigate }) {
         padding: "5vh",
       }}
     >
-      <TextField label="Email Address" variant="outlined" />
-      <TextField label="User Name" variant="outlined" />
-      <TextField label="Password" variant="outlined" />
+      <TextField
+        label="Email Address"
+        value={email}
+        variant="outlined"
+        onChange={(e) => {
+          setEmail(e.target.value);
+        }}
+      />
+      <TextField
+        label="User Name"
+        value={userName}
+        variant="outlined"
+        onChange={(e) => {
+          setUserName(e.target.value);
+        }}
+      />
+      <TextField
+        label="Password"
+        variant="outlined"
+        value={password}
+        onChange={(e) => {
+          setPassword(e.target.value);
+        }}
+      />
       <Button
         variant="contained"
         color="primary"

@@ -20,6 +20,7 @@ function Login({ navigate }) {
       <TextField
         label="User Name"
         variant="outlined"
+        value={userName}
         onChange={(e) => {
           setUserName(e.target.value);
         }}
@@ -27,6 +28,7 @@ function Login({ navigate }) {
       <TextField
         label="Password"
         variant="outlined"
+        value={password}
         onChange={(e) => {
           setPassword(e.target.value);
         }}
