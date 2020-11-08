@@ -1,4 +1,6 @@
-export const user = {
+import React from "react";
+
+const user = {
   user_id: "248yr38hqfh8",
   userName: "NathanBarg",
   email: "Nathan@bar.com",
@@ -9,7 +11,7 @@ export const user = {
   sleepData: [],
 };
 
-export const admin = {
+const admin = {
   user_id: "123578s80",
   userName: "ClemFandango",
   email: "canyou@hearme.com",
@@ -25,7 +27,7 @@ for (let i = 1000; i < 10000; i += 1000) {
   admin.sleepData.push({ wentToSleep: new Date(i), wokeUp: new Date(i + 500) });
 }
 
-export const dets = [
+const dets = [
   {
     det_id: "bnjkabsfio23",
     detName: "20-1",
@@ -48,3 +50,11 @@ export const dets = [
     createdAt: new Date(0),
   },
 ];
+
+export const dummyData = {
+  user,
+  admin,
+  dets,
+};
+
+export const DummyDataContext = React.createContext();

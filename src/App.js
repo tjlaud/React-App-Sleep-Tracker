@@ -9,21 +9,24 @@ import Settings from "./pages/Settings";
 import Summary from "./pages/Summary";
 import CreateDet from "./pages/CreateDet";
 import ManageDet from "./pages/ManageDet";
-import { user, dets } from "./data/index";
+// import { user, dets } from "./data/index";
+import { DummyDataContext, dummyData } from "./data/index";
 
 function App() {
-  console.log({ user, dets });
+  // console.log({ user, dets });
   return (
-    <Router>
-      <Login path="/login" default />
-      <Signup path="/signup" />
-      <Home path="/" />
-      <Stats path="/stats" />
-      <Settings path="/settings" />
-      <CreateDet path="/settings/create" />
-      <ManageDet path="/settings/manage" />
-      <Summary path="/summary" />
-    </Router>
+    <DummyDataContext.Provider data={dummyData}>
+      <Router>
+        <Login path="/login" default />
+        <Signup path="/signup" />
+        <Home path="/" />
+        <Stats path="/stats" />
+        <Settings path="/settings" />
+        <CreateDet path="/settings/create" />
+        <ManageDet path="/settings/manage" />
+        <Summary path="/summary" />
+      </Router>
+    </DummyDataContext.Provider>
   );
 }
 
