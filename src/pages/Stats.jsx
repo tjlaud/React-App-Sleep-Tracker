@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Box, Fab } from "@material-ui/core";
 import AddIcon from "@material-ui/icons/Add";
 import Navbar from "../components/Navbar";
 import Headline from "../components/Headline";
 import Sleep from "../components/Sleep";
+import { DummyDataContext } from "../data/index";
 
 function Stats() {
+  const { user } = useContext(DummyDataContext);
+  const { sleepData } = user;
   return (
     <Box
       style={{
@@ -19,7 +22,15 @@ function Stats() {
       }}
     >
       <Headline />
-      <Sleep />
+      {sleepData.map((sleepObj, index) => {
+        return (
+          <Sleep
+            key={index}
+            wentToSleep={sleepObj.wentToSleep}
+            wokeUp={sleepObj.wokeUp}
+          />
+        );
+      })}
       <br />
       <Fab>
         <AddIcon />

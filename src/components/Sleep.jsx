@@ -9,26 +9,31 @@ import {
 } from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
-function Sleep() {
+function Sleep({ wentToSleep, wokeUp }) {
+  const duration = wokeUp.getTime() - wentToSleep.getTime();
+  const durationHours = duration / 1000 / 60 / 60;
+
   return (
     <Accordion style={{ width: "80%" }}>
       <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-        <Typography variant="body1">Date from:</Typography>
-        <Typography variant="body1">Duration:</Typography>
+        <Typography variant="body1">
+          Date from: {wentToSleep.toDateString()}
+        </Typography>
+        <Typography variant="body1"> Duration: {durationHours}Hrs</Typography>
       </AccordionSummary>
       <AccordionDetails>
         <TextField
           label="From"
           type="datetime-local"
-          defaultValue="2017-05-24T10:30"
+          defaultValue={wentToSleep.toISOString().slice(0, -8)}
           InputLabelProps={{
             shrink: true,
           }}
         />
         <TextField
-          label="From"
+          label="To"
           type="datetime-local"
-          defaultValue="2017-05-24T10:30"
+          defaultValue={wokeUp.toISOString().slice(0, -8)}
           InputLabelProps={{
             shrink: true,
           }}

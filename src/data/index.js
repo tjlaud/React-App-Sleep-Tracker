@@ -22,9 +22,11 @@ const admin = {
   sleepData: [],
 };
 
-for (let i = 1000; i < 10000; i += 1000) {
-  user.sleepData.push({ wentToSleep: new Date(i), wokeUp: new Date(i + 500) });
-  admin.sleepData.push({ wentToSleep: new Date(i), wokeUp: new Date(i + 500) });
+for (let i = 1; i < 7; i++) {
+  const wentToSleep = new Date(`November ${i}, 2020 22:00:00`);
+  const wokeUp = new Date(`November ${i + 1}, 2020 07:00:00`);
+  user.sleepData.push({ wentToSleep, wokeUp });
+  admin.sleepData.push({ wentToSleep, wokeUp });
 }
 
 const dets = [

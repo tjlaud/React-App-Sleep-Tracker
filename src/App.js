@@ -13,7 +13,7 @@ import { DummyDataContext, dummyData } from "./data/index";
 
 function App() {
   return (
-    <DummyDataContext.Provider data={dummyData}>
+    <DummyDataContext.Provider value={dummyData}>
       <Router>
         <Login path="/login" default />
         <Signup path="/signup" />
