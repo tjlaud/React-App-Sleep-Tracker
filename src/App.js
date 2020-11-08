@@ -9,11 +9,9 @@ import Settings from "./pages/Settings";
 import Summary from "./pages/Summary";
 import CreateDet from "./pages/CreateDet";
 import ManageDet from "./pages/ManageDet";
-// import { user, dets } from "./data/index";
 import { DummyDataContext, dummyData } from "./data/index";
 
 function App() {
-  // console.log({ user, dets });
   return (
     <DummyDataContext.Provider data={dummyData}>
       <Router>
