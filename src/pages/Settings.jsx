@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   Box,
   TextField,
@@ -9,9 +9,13 @@ import {
   InputLabel,
 } from "@material-ui/core";
 import Navbar from "../components/Navbar";
+import { DummyDataContext } from "../data/index";
 
-function Settings({ navigate }) {
+function Settings({ navigate }) {  
+  const { user } = useContext(DummyDataContext);  
+
   return (
+
     <Box
       style={{
         display: "flex",
@@ -25,7 +29,7 @@ function Settings({ navigate }) {
     >
       <TextField
         variant="outlined"
-        value="the users actual name"
+        value={user.userName}
         disabled={true}
       />
       <br />
@@ -47,28 +51,35 @@ function Settings({ navigate }) {
         Join det
       </Button>
       <br />
-      <Button
+      {
+        user.isAdmin && <><Button
+        className="adminButton"
         variant="contained"
         color="primary"
         onClick={() => {
           navigate("create");
         }}
-      >
+        >
         Create a det
-      </Button>
-      <br />
-      <Button
+        </Button>
+        <br />
+        <Button
+        className="adminButton"
         variant="contained"
         color="primary"
         onClick={() => {
           navigate("manage");
         }}
-      >
+        >
         Manage a det
-      </Button>
+        </Button></> 
+      }
+      
       <Navbar />
     </Box>
   );
 }
 
 export default Settings;
+
+
