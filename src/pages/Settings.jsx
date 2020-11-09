@@ -14,18 +14,6 @@ import { DummyDataContext } from "../data/index";
 function Settings({ navigate }) {  
   const { user } = useContext(DummyDataContext);  
 
-  //new code below.
-
-  let adminStyle = {display: "flex"}
-
-  function adminCheck() {
-  const adminBoolean = user.isAdmin
-  adminBoolean ? adminStyle = {display: "inline"} : adminStyle = {display: "none"}
-  }
-  adminCheck()
-
-  // new code above
-
   return (
 
     <Box
@@ -63,29 +51,29 @@ function Settings({ navigate }) {
         Join det
       </Button>
       <br />
-    <Button
-      style={adminStyle}
-      className="adminButton"
-      variant="contained"
-      color="primary"
-      onClick={() => {
-        navigate("create");
-      }}
-    >
-      Create a det
-    </Button>
-    <br />
-    <Button
-      style={adminStyle}
-      className="adminButton"
-      variant="contained"
-      color="primary"
-      onClick={() => {
-        navigate("manage");
-      }}
-    >
-      Manage a det
-    </Button>
+      {
+        user.isAdmin && <><Button
+        className="adminButton"
+        variant="contained"
+        color="primary"
+        onClick={() => {
+          navigate("create");
+        }}
+        >
+        Create a det
+        </Button>
+        <br />
+        <Button
+        className="adminButton"
+        variant="contained"
+        color="primary"
+        onClick={() => {
+          navigate("manage");
+        }}
+        >
+        Manage a det
+        </Button></> 
+      }
       
       <Navbar />
     </Box>
@@ -93,3 +81,5 @@ function Settings({ navigate }) {
 }
 
 export default Settings;
+
+
