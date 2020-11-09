@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   Box,
   TextField,
@@ -9,8 +9,11 @@ import {
   InputLabel,
 } from "@material-ui/core";
 import Navbar from "../components/Navbar";
+import { DummyDataContext } from "../data/index";
 
-function Settings({ navigate }) {
+function Settings({ navigate }) {  
+  const { user } = useContext(DummyDataContext);
+
   return (
     <Box
       style={{
@@ -25,7 +28,8 @@ function Settings({ navigate }) {
     >
       <TextField
         variant="outlined"
-        value="the users actual name"
+        value={user.userName}
+        //value="the users actual name"
         disabled={true}
       />
       <br />
