@@ -12,7 +12,7 @@ function Home() {
         alignItems: "center",
         margin: "10vh auto",
         border: "2px solid grey",
-        padding: "5vh",
+        padding: "10vh",
       }}
     >
       <Button variant="contained" color="primary">
