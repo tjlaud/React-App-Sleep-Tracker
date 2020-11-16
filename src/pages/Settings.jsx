@@ -12,7 +12,9 @@ import Navbar from "../components/Navbar";
 import { DummyDataContext } from "../data/index";
 
 function Settings({ navigate }) {  
-  const { user } = useContext(DummyDataContext);  
+  const { user } = useContext(DummyDataContext); 
+  const { dets } = useContext(DummyDataContext); 
+  
 
   return (
 
@@ -41,9 +43,15 @@ function Settings({ navigate }) {
       <FormControl variant="outlined" style={{ width: "80%" }}>
         <InputLabel id="det">Select a det</InputLabel>
         <Select id="det" value="">
-          <MenuItem value="20-1">20-1</MenuItem>
-          <MenuItem value="20-2">20-2</MenuItem>
-          <MenuItem value="20-3">20-3</MenuItem>
+
+        {    
+          dets.map((detsObj, index) => {
+            return (
+            <MenuItem value="">{detsObj.detName}</MenuItem>
+            );
+          }   
+        )}
+    
         </Select>
       </FormControl>
       <br />
