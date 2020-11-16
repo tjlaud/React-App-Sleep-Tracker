@@ -7,6 +7,7 @@ import {
   MenuItem,
   FormControl,
   InputLabel,
+  option,
 } from "@material-ui/core";
 import Navbar from "../components/Navbar";
 import { DummyDataContext } from "../data/index";
@@ -42,15 +43,20 @@ function Settings({ navigate }) {
       <br />
       <FormControl variant="outlined" style={{ width: "80%" }}>
         <InputLabel id="det">Select a det</InputLabel>
-        <Select id="det" value="">
-
-        {    
-          dets.map((detsObj, index) => {
-            return (
-            <MenuItem value="">{detsObj.detName}</MenuItem>
-            );
-          }   
-        )}
+        <Select     
+          value=""
+          native   
+          id="det"          
+        >
+          <option value=""></option>
+          {   
+            dets.map((detsObj, ) => {              
+              return (
+                 <option value="">{detsObj.detName}</option>
+              );
+            }   
+            )
+          }
     
         </Select>
       </FormControl>
@@ -90,4 +96,14 @@ function Settings({ navigate }) {
 
 export default Settings;
 
+
+/*
+        {    
+          dets.map((detsObj, ) => {
+            return (
+            <MenuItem value="">{detsObj.detName}</MenuItem>
+            );
+          }   
+        )}
+        */
 
