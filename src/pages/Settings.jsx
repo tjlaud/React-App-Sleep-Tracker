@@ -15,9 +15,17 @@ function Settings({ navigate }) {
   const { user } = useContext(DummyDataContext);
   const { dets } = useContext(DummyDataContext);
   const [selectedDet, setSelectedDet] = useState("");
+  const [editName, setEditName] = useState(true);
+  const [userName, setUserName] = useState(user.userName);
 
   const handleChange = (event) => {
     setSelectedDet(event.target.value);
+  };
+  const handleToggle = (event) => {
+    setEditName(!editName);
+  };
+  const handleUserName = (event) => {
+    setUserName(event.target.value);
   };
 
   return (
@@ -32,11 +40,16 @@ function Settings({ navigate }) {
         padding: "5vh",
       }}
     >
-      <TextField variant="outlined" value={user.userName} disabled={true} />
+      <TextField
+        variant="outlined"
+        value={userName}
+        onChange={handleUserName}
+        disabled={editName}
+      />
       <br />
 
-      <Button variant="contained" color="primary">
-        Edit
+      <Button variant="contained" color="primary" onClick={handleToggle}>
+        {editName ? "Edit" : "Submit"}
       </Button>
       <br />
       <FormControl variant="outlined" style={{ width: "80%" }}>
@@ -45,7 +58,9 @@ function Settings({ navigate }) {
           <MenuItem value=""></MenuItem>
           {dets.map((detsObj) => {
             return (
-              <MenuItem value={detsObj.detName}>{detsObj.detName}</MenuItem>
+              <MenuItem key={detsObj.det_id} value={detsObj.detName}>
+                {detsObj.detName}
+              </MenuItem>
             );
           })}
         </Select>
