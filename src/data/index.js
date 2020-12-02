@@ -41,14 +41,14 @@ const dets = [
     det_id: "asdghu189",
     detName: "20-2",
     createdBy: "ClemFandango",
-    users: ["248yr38hqfh8"],
+    users: ["123578s80"], //altered users
     createdAt: new Date(0),
   },
   {
     det_id: "asdhfi01023",
     detName: "20-3",
     createdBy: "TC",
-    users: ["248yr38hqfh8"],
+    users: ["248yr38hqfh8", "123578s80"], //altered users
     createdAt: new Date(0),
   },
 ];
@@ -60,3 +60,7 @@ export const dummyData = {
 };
 
 export const DummyDataContext = React.createContext();
+
+/*
+ 
+        */

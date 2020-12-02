@@ -47,7 +47,6 @@ function Settings({ navigate }) {
         disabled={editName}
       />
       <br />
-
       <Button variant="contained" color="primary" onClick={handleToggle}>
         {editName ? "Edit" : "Submit"}
       </Button>
@@ -57,11 +56,13 @@ function Settings({ navigate }) {
         <Select id="det" value={selectedDet} onChange={handleChange}>
           <MenuItem value=""></MenuItem>
           {dets.map((detsObj) => {
-            return (
-              <MenuItem key={detsObj.det_id} value={detsObj.detName}>
-                {detsObj.detName}
-              </MenuItem>
-            );
+            if (detsObj.users.includes(user.user_id)) {
+              return (
+                <MenuItem key={detsObj.det_id} value={detsObj.detName}>
+                  {detsObj.detName}
+                </MenuItem>
+              );
+            }
           })}
         </Select>
       </FormControl>
@@ -104,11 +105,27 @@ function Settings({ navigate }) {
 export default Settings;
 
 /*
-        {    
-          dets.map((detsObj, ) => {
+
+57 -> 64
+
+          <MenuItem value=""></MenuItem>
+          {dets.map((detsObj) => {
             return (
-            <MenuItem value="">{detsObj.detName}</MenuItem>
+              <MenuItem key={detsObj.det_id} value={detsObj.detName}>
+                {detsObj.detName}
+              </MenuItem>
             );
-          }   
-        )}
+          })}
+
+57 -> 66 Working!!!
+          <MenuItem value=""></MenuItem>
+          {dets.map((detsObj) => {
+            if (detsObj.users.includes(user.user_id)) {
+              return (
+                <MenuItem key={detsObj.det_id} value={detsObj.detName}>
+                  {detsObj.detName}
+                </MenuItem>
+              );
+            }
+          })}
         */
