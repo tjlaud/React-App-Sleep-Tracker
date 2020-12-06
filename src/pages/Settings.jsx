@@ -21,7 +21,7 @@ function Settings({ navigate }) {
   const handleChange = (event) => {
     setSelectedDet(event.target.value);
   };
-  const handleToggle = (event) => {
+  const handleToggle = () => {
     setEditName(!editName);
   };
   const handleUserName = (event) => {
@@ -56,13 +56,13 @@ function Settings({ navigate }) {
         <Select id="det" value={selectedDet} onChange={handleChange}>
           <MenuItem value=""></MenuItem>
           {dets.map((detsObj) => {
-            if (detsObj.users.includes(user.user_id)) {
-              return (
+            return (
+              detsObj.users.includes(user.user_id) && (
                 <MenuItem key={detsObj.det_id} value={detsObj.detName}>
                   {detsObj.detName}
                 </MenuItem>
-              );
-            }
+              )
+            );
           })}
         </Select>
       </FormControl>
