@@ -12,11 +12,11 @@ import Navbar from "../components/Navbar";
 import { DummyDataContext } from "../data/index";
 
 function Settings({ navigate }) {
-  const { user } = useContext(DummyDataContext);
+  const { users } = useContext(DummyDataContext);
   const { dets } = useContext(DummyDataContext);
   const [selectedDet, setSelectedDet] = useState("");
   const [editName, setEditName] = useState(true);
-  const [userName, setUserName] = useState(user.userName);
+  const [userName, setUserName] = useState(users[0].userName);
 
   const handleChange = (event) => {
     setSelectedDet(event.target.value);
@@ -57,7 +57,7 @@ function Settings({ navigate }) {
           <MenuItem value=""></MenuItem>
           {dets.map((detsObj) => {
             return (
-              detsObj.users.includes(user.user_id) && (
+              detsObj.users.includes(users[0].user_id) && (
                 <MenuItem key={detsObj.det_id} value={detsObj.detName}>
                   {detsObj.detName}
                 </MenuItem>
@@ -71,7 +71,7 @@ function Settings({ navigate }) {
         Join det
       </Button>
       <br />
-      {user.isAdmin && (
+      {users[0].isAdmin && (
         <>
           <Button
             className="adminButton"
@@ -103,29 +103,3 @@ function Settings({ navigate }) {
 }
 
 export default Settings;
-
-/*
-
-57 -> 64
-
-          <MenuItem value=""></MenuItem>
-          {dets.map((detsObj) => {
-            return (
-              <MenuItem key={detsObj.det_id} value={detsObj.detName}>
-                {detsObj.detName}
-              </MenuItem>
-            );
-          })}
-
-57 -> 66 Working!!!
-          <MenuItem value=""></MenuItem>
-          {dets.map((detsObj) => {
-            if (detsObj.users.includes(user.user_id)) {
-              return (
-                <MenuItem key={detsObj.det_id} value={detsObj.detName}>
-                  {detsObj.detName}
-                </MenuItem>
-              );
-            }
-          })}
-        */

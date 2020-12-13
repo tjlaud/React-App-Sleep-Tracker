@@ -14,8 +14,9 @@ import Person from "../components/Person";
 import { DummyDataContext } from "../data/index";
 
 function ManageDet({ navigate }) {
-  const { user } = useContext(DummyDataContext);
+  const { users } = useContext(DummyDataContext);
   const { dets } = useContext(DummyDataContext);
+  const [selectedDetObj, setSelectedDetObj] = useState({});
   const [selectedDet, setSelectedDet] = useState("");
   const [editName, setEditName] = useState(true);
   const [detName, setDetName] = useState(selectedDet);
@@ -23,6 +24,9 @@ function ManageDet({ navigate }) {
   const handleChange = (event) => {
     setSelectedDet(event.target.value);
     setDetName(event.target.value);
+    setSelectedDetObj(
+      dets.find((element) => element.detName === event.target.value) || {}
+    );
   };
 
   const handleDetName = (event) => {
@@ -51,7 +55,7 @@ function ManageDet({ navigate }) {
           <MenuItem value=""></MenuItem>
           {dets.map((detsObj) => {
             return (
-              user.dets.includes(detsObj.det_id) && (
+              users[0].dets.includes(detsObj.det_id) && (
                 <MenuItem key={detsObj.det_id} value={detsObj.detName}>
                   {detsObj.detName}
                 </MenuItem>
@@ -75,7 +79,9 @@ function ManageDet({ navigate }) {
       </Button>
       <br />
       <List>
-        <Person />
+        {selectedDetObj.users?.map((userID) => {
+          return <Person key={userID} userID={userID} />;
+        })}
       </List>
       <br />
 

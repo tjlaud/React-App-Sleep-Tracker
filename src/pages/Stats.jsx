@@ -7,8 +7,8 @@ import Sleep from "../components/Sleep";
 import { DummyDataContext } from "../data/index";
 
 function Stats() {
-  const { user } = useContext(DummyDataContext);
-  const { sleepData } = user;
+  const { users } = useContext(DummyDataContext);
+  const { sleepData } = users[0];
   return (
     <Box
       style={{
