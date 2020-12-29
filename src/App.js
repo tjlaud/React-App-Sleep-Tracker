@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.css";
+import "./App.scss";
 import { Router } from "@reach/router";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";

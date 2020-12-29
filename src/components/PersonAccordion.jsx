@@ -10,11 +10,11 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import SentimentVerySatisfiedIcon from "@material-ui/icons/SentimentVerySatisfied";
 import SentimentVeryDissatisfiedIcon from "@material-ui/icons/SentimentVeryDissatisfied";
 
-function PersonAccordion() {
+function PersonAccordion(props) {
   return (
     <Accordion style={{ width: "80%" }}>
       <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-        <Typography variant="body1">User Name</Typography>
+        <Typography variant="body1">{props.userName}</Typography>
         <SentimentVerySatisfiedIcon />
         <SentimentVeryDissatisfiedIcon />
       </AccordionSummary>
