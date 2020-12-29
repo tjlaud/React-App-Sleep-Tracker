@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   ListItem,
   ListItemAvatar,
@@ -8,8 +8,21 @@ import {
   IconButton,
 } from "@material-ui/core";
 import DeleteIcon from "@material-ui/icons/Delete";
+import { DummyDataContext } from "../data/index";
 
-function Person() {
+function Person(props) {
+  const { users } = useContext(DummyDataContext);
+
+  const userObj =
+    users.find((element) => element.user_id === props.userID) || {};
+
+  let nameArray = userObj.userName.split(" ");
+  let firstInitial = nameArray[0][0];
+  let lastword = nameArray.length - 1;
+  let secondInitial = nameArray[lastword][0];
+
+  let initials = firstInitial + secondInitial;
+
   return (
     <ListItem
       style={{
@@ -17,9 +30,9 @@ function Person() {
       }}
     >
       <ListItemAvatar>
-        <Avatar>NB</Avatar>
+        <Avatar>{initials}</Avatar>
       </ListItemAvatar>
-      <ListItemText primary="Nathan Bargery" />
+      <ListItemText primary={userObj.userName} />
       <ListItemSecondaryAction>
         <IconButton edge="end" aria-label="delete">
           <DeleteIcon />

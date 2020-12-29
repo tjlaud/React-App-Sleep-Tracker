@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import {
   Box,
   TextField,
@@ -11,11 +11,24 @@ import {
 import Navbar from "../components/Navbar";
 import { DummyDataContext } from "../data/index";
 
-function Settings({ navigate }) {  
-  const { user } = useContext(DummyDataContext);  
+function Settings({ navigate }) {
+  const { users } = useContext(DummyDataContext);
+  const { dets } = useContext(DummyDataContext);
+  const [selectedDet, setSelectedDet] = useState("");
+  const [editName, setEditName] = useState(true);
+  const [userName, setUserName] = useState(users[0].userName);
+
+  const handleChange = (event) => {
+    setSelectedDet(event.target.value);
+  };
+  const handleToggle = () => {
+    setEditName(!editName);
+  };
+  const handleUserName = (event) => {
+    setUserName(event.target.value);
+  };
 
   return (
-
     <Box
       style={{
         display: "flex",
@@ -29,21 +42,28 @@ function Settings({ navigate }) {
     >
       <TextField
         variant="outlined"
-        value={user.userName}
-        disabled={true}
+        value={userName}
+        onChange={handleUserName}
+        disabled={editName}
       />
       <br />
-
-      <Button variant="contained" color="primary">
-        Edit
+      <Button variant="contained" color="primary" onClick={handleToggle}>
+        {editName ? "Edit" : "Submit"}
       </Button>
       <br />
       <FormControl variant="outlined" style={{ width: "80%" }}>
         <InputLabel id="det">Select a det</InputLabel>
-        <Select id="det" value="">
-          <MenuItem value="20-1">20-1</MenuItem>
-          <MenuItem value="20-2">20-2</MenuItem>
-          <MenuItem value="20-3">20-3</MenuItem>
+        <Select id="det" value={selectedDet} onChange={handleChange}>
+          <MenuItem value=""></MenuItem>
+          {dets.map((detsObj) => {
+            return (
+              detsObj.users.includes(users[0].user_id) && (
+                <MenuItem key={detsObj.det_id} value={detsObj.detName}>
+                  {detsObj.detName}
+                </MenuItem>
+              )
+            );
+          })}
         </Select>
       </FormControl>
       <br />
@@ -51,35 +71,35 @@ function Settings({ navigate }) {
         Join det
       </Button>
       <br />
-      {
-        user.isAdmin && <><Button
-        className="adminButton"
-        variant="contained"
-        color="primary"
-        onClick={() => {
-          navigate("create");
-        }}
-        >
-        Create a det
-        </Button>
-        <br />
-        <Button
-        className="adminButton"
-        variant="contained"
-        color="primary"
-        onClick={() => {
-          navigate("manage");
-        }}
-        >
-        Manage a det
-        </Button></> 
-      }
-      
+      {users[0].isAdmin && (
+        <>
+          <Button
+            className="adminButton"
+            variant="contained"
+            color="primary"
+            onClick={() => {
+              navigate("create");
+            }}
+          >
+            Create a det
+          </Button>
+          <br />
+          <Button
+            className="adminButton"
+            variant="contained"
+            color="primary"
+            onClick={() => {
+              navigate("manage");
+            }}
+          >
+            Manage a det
+          </Button>
+        </>
+      )}
+
       <Navbar />
     </Box>
   );
 }
 
 export default Settings;
-
-
