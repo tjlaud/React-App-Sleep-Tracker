@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Box, Fab } from "@material-ui/core";
 import AddIcon from "@material-ui/icons/Add";
 import Navbar from "../components/Navbar";
-import Headline from "../components/Headline";
+import Headline from "../components/Headline/Headline";
 import Sleep from "../components/Sleep";
 import { DummyDataContext } from "../data/index";
 

@@ -7,7 +7,7 @@ import {
   MenuItem,
 } from "@material-ui/core";
 import Navbar from "../components/Navbar";
-import Headline from "../components/Headline";
+import Headline from "../components/Headline/Headline";
 import PersonAccordion from "../components/PersonAccordion";
 import { DummyDataContext } from "../data/index";
 
