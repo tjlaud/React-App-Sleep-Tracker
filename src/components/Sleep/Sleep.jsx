@@ -8,6 +8,7 @@ import {
   TextField,
 } from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import "./Sleep.scss";
 
 function Sleep({ wentToSleep, wokeUp }) {
   const duration = wokeUp.getTime() - wentToSleep.getTime();

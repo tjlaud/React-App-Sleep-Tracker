@@ -10,6 +10,7 @@ import {
 } from "@material-ui/core";
 import Navbar from "../components/Navbar/Navbar";
 import { DummyDataContext } from "../data/index";
+import "./App.scss";
 
 function Settings({ navigate }) {
   const { users } = useContext(DummyDataContext);
@@ -29,17 +30,7 @@ function Settings({ navigate }) {
   };
 
   return (
-    <Box
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        width: "50%",
-        alignItems: "center",
-        margin: "10vh auto",
-        border: "2px solid grey",
-        padding: "5vh",
-      }}
-    >
+    <Box className="box">
       <TextField
         variant="outlined"
         value={userName}

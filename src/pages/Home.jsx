@@ -1,20 +1,11 @@
 import React from "react";
 import { Button, Box, TextField } from "@material-ui/core";
 import Navbar from "../components/Navbar/Navbar";
+import "./App.scss";
 
 function Home() {
   return (
-    <Box
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        width: "50%",
-        alignItems: "center",
-        margin: "10vh auto",
-        border: "2px solid grey",
-        padding: "10vh",
-      }}
-    >
+    <Box className="box">
       <Button variant="contained" color="primary">
         Sleepy Time
       </Button>

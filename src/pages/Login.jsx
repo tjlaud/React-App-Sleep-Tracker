@@ -1,22 +1,13 @@
 import React, { useState } from "react";
 import { TextField, Button, Box } from "@material-ui/core";
+import "./App.scss";
 
 function Login({ navigate }) {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
 
   return (
-    <Box
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        width: "50%",
-        alignItems: "center",
-        margin: "10vh auto",
-        border: "2px solid grey",
-        padding: "5vh",
-      }}
-    >
+    <Box className="box">
       <TextField
         label="User Name"
         variant="outlined"

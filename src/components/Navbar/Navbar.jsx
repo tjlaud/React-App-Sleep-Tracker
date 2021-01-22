@@ -5,6 +5,7 @@ import GroupIcon from "@material-ui/icons/Group";
 import PersonIcon from "@material-ui/icons/Person";
 import HomeIcon from "@material-ui/icons/Home";
 import SettingsIcon from "@material-ui/icons/Settings";
+import "./Navbar.scss";
 
 function Navbar() {
   const [value, setValue] = useState("home");
@@ -24,7 +25,11 @@ function Navbar() {
   // };
 
   return (
-    <BottomNavigation value={value} style={{ backgroundColor: "white" }}>
+    <BottomNavigation
+      class="Navbar"
+      value={value}
+      style={{ backgroundColor: "white" }}
+    >
       <BottomNavigationAction
         label="Home"
         value=""

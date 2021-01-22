@@ -9,6 +9,7 @@ import {
 } from "@material-ui/core";
 import DeleteIcon from "@material-ui/icons/Delete";
 import { DummyDataContext } from "../../data/index";
+import "./Person.scss";
 
 function Person(props) {
   const { users } = useContext(DummyDataContext);

@@ -10,6 +10,7 @@ import Navbar from "../components/Navbar/Navbar";
 import Headline from "../components/Headline/Headline";
 import PersonAccordion from "../components/PersonAccordion/PersonAccordion";
 import { DummyDataContext } from "../data/index";
+import "./App.scss";
 
 function Summary() {
   const { users } = useContext(DummyDataContext);
@@ -25,17 +26,7 @@ function Summary() {
   };
 
   return (
-    <Box
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        width: "50%",
-        alignItems: "center",
-        margin: "10vh auto",
-        border: "2px solid grey",
-        padding: "5vh",
-      }}
-    >
+    <Box className="box">
       <Headline />
       <FormControl variant="outlined" style={{ width: "80%" }}>
         <InputLabel id="det">Select a det</InputLabel>

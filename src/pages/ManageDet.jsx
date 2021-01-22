@@ -9,9 +9,10 @@ import {
   MenuItem,
   List,
 } from "@material-ui/core";
-import Navbar from "../components/Navbar";
-import Person from "../components/Person";
+import Navbar from "../components/Navbar/Navbar";
+import Person from "../components/Person/Person";
 import { DummyDataContext } from "../data/index";
+import "./App.scss";
 
 function ManageDet({ navigate }) {
   const { users } = useContext(DummyDataContext);
@@ -38,17 +39,7 @@ function ManageDet({ navigate }) {
   };
 
   return (
-    <Box
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        width: "50%",
-        alignItems: "center",
-        margin: "10vh auto",
-        border: "2px solid grey",
-        padding: "5vh",
-      }}
-    >
+    <Box className="box">
       <FormControl variant="outlined" style={{ width: "80%" }}>
         <InputLabel id="det">Select a det</InputLabel>
         <Select id="det" value={selectedDet} onChange={handleChange}>
