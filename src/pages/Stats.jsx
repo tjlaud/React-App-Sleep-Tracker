@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import { Box, Fab } from "@material-ui/core";
 import AddIcon from "@material-ui/icons/Add";
-import Navbar from "../components/Navbar";
+import Navbar from "../components/Navbar/Navbar";
 import Headline from "../components/Headline/Headline";
-import Sleep from "../components/Sleep";
+import Sleep from "../components/Sleep/Sleep";
 import { DummyDataContext } from "../data/index";
 
 function Stats() {

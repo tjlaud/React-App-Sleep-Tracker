@@ -6,9 +6,9 @@ import {
   Select,
   MenuItem,
 } from "@material-ui/core";
-import Navbar from "../components/Navbar";
+import Navbar from "../components/Navbar/Navbar";
 import Headline from "../components/Headline/Headline";
-import PersonAccordion from "../components/PersonAccordion";
+import PersonAccordion from "../components/PersonAccordion/PersonAccordion";
 import { DummyDataContext } from "../data/index";
 
 function Summary() {

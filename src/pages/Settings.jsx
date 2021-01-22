@@ -8,7 +8,7 @@ import {
   FormControl,
   InputLabel,
 } from "@material-ui/core";
-import Navbar from "../components/Navbar";
+import Navbar from "../components/Navbar/Navbar";
 import { DummyDataContext } from "../data/index";
 
 function Settings({ navigate }) {

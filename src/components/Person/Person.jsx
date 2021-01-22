@@ -8,7 +8,7 @@ import {
   IconButton,
 } from "@material-ui/core";
 import DeleteIcon from "@material-ui/icons/Delete";
-import { DummyDataContext } from "../data/index";
+import { DummyDataContext } from "../../data/index";
 
 function Person(props) {
   const { users } = useContext(DummyDataContext);

@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, TextField, Button } from "@material-ui/core";
-import Navbar from "../components/Navbar";
+import Navbar from "../components/Navbar/Navbar";
 
 function CreateDet({ navigate }) {
   return (
