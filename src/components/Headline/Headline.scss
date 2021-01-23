@@ -1,6 +1,6 @@
 .scsstest {
-  width: calc(100% + 10vh);
-  height: 10vh;
+  max-width: 900px;
+  height: 18vh;
   background-color: lightblue;
   position: relative;
   top: -5vh;
