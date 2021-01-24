@@ -33,7 +33,7 @@ function Navbar() {
       <BottomNavigation
         className="Navbar"
         value={value}
-        style={{ backgroundColor: "white" }}
+        style={{ backgroundColor: "#D9B48FFF" }}
       >
         <BottomNavigationAction
           label="Home"
