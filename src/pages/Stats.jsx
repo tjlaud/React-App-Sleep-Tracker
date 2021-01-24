@@ -23,7 +23,9 @@ function Stats() {
             />
           );
         })}
-        <br />
+      </Box>
+      <br />
+      <Box className="fabBox">
         <Fab>
           <AddIcon />
         </Fab>

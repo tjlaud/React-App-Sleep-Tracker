@@ -40,52 +40,53 @@ function ManageDet({ navigate }) {
 
   return (
     <Box className="box">
-      <FormControl variant="outlined" style={{ width: "80%" }}>
-        <InputLabel id="det">Select a det</InputLabel>
-        <Select id="det" value={selectedDet} onChange={handleChange}>
-          <MenuItem value=""></MenuItem>
-          {dets.map((detsObj) => {
-            return (
-              users[0].dets.includes(detsObj.det_id) && (
-                <MenuItem key={detsObj.det_id} value={detsObj.detName}>
-                  {detsObj.detName}
-                </MenuItem>
-              )
-            );
+      <Box className="settingsBox">
+        <FormControl variant="outlined" style={{ width: "80%" }}>
+          <InputLabel id="det">Select a det</InputLabel>
+          <Select id="det" value={selectedDet} onChange={handleChange}>
+            <MenuItem value=""></MenuItem>
+            {dets.map((detsObj) => {
+              return (
+                users[0].dets.includes(detsObj.det_id) && (
+                  <MenuItem key={detsObj.det_id} value={detsObj.detName}>
+                    {detsObj.detName}
+                  </MenuItem>
+                )
+              );
+            })}
+          </Select>
+        </FormControl>
+        <br />
+
+        <TextField
+          variant="outlined"
+          value={detName}
+          disabled={editName}
+          onChange={handleDetName}
+        />
+        <br />
+
+        <Button variant="contained" color="primary" onClick={handleToggle}>
+          {editName ? "Edit" : "Submit"}
+        </Button>
+        <br />
+        <List>
+          {selectedDetObj.users?.map((userID) => {
+            return <Person key={userID} userID={userID} />;
           })}
-        </Select>
-      </FormControl>
-      <br />
+        </List>
+        <br />
 
-      <TextField
-        variant="outlined"
-        value={detName}
-        disabled={editName}
-        onChange={handleDetName}
-      />
-      <br />
-
-      <Button variant="contained" color="primary" onClick={handleToggle}>
-        {editName ? "Edit" : "Submit"}
-      </Button>
-      <br />
-      <List>
-        {selectedDetObj.users?.map((userID) => {
-          return <Person key={userID} userID={userID} />;
-        })}
-      </List>
-      <br />
-
-      <Button
-        variant="contained"
-        color="secondary"
-        onClick={() => {
-          navigate("/settings");
-        }}
-      >
-        Delete Det
-      </Button>
-
+        <Button
+          variant="contained"
+          color="secondary"
+          onClick={() => {
+            navigate("/settings");
+          }}
+        >
+          Delete Det
+        </Button>
+      </Box>
       <Navbar />
     </Box>
   );

@@ -28,29 +28,32 @@ function Summary() {
   return (
     <Box className="box">
       <Headline />
-      <FormControl variant="outlined" style={{ width: "80%" }}>
-        <InputLabel id="det">Select a det</InputLabel>
-        <Select id="det" value={selectedDet} onChange={handleChange}>
-          <MenuItem value=""></MenuItem>
-          {dets.map((detsObj) => {
-            return (
-              users[0].dets.includes(detsObj.det_id) && (
-                <MenuItem key={detsObj.det_id} value={detsObj.detName}>
-                  {detsObj.detName}
-                </MenuItem>
-              )
-            );
-          })}
-        </Select>
-      </FormControl>
-      {users.map((user) => {
-        return (
-          user.dets.includes(selectedDetObj.det_id) && (
-            <PersonAccordion userName={user.userName} />
-          )
-        );
-      })}
-      <br />
+      <Box className="summaryBox">
+        <FormControl variant="outlined" style={{ width: "80%" }}>
+          <InputLabel id="det">Select a det</InputLabel>
+          <Select id="det" value={selectedDet} onChange={handleChange}>
+            <MenuItem value=""></MenuItem>
+            {dets.map((detsObj) => {
+              return (
+                users[0].dets.includes(detsObj.det_id) && (
+                  <MenuItem key={detsObj.det_id} value={detsObj.detName}>
+                    {detsObj.detName}
+                  </MenuItem>
+                )
+              );
+            })}
+          </Select>
+        </FormControl>
+        {users.map((user) => {
+          return (
+            user.dets.includes(selectedDetObj.det_id) && (
+              <PersonAccordion userName={user.userName} />
+            )
+          );
+        })}
+        <br />
+      </Box>
+
       <Navbar />
     </Box>
   );

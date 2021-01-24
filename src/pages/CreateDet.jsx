@@ -6,19 +6,21 @@ import "./App.scss";
 function CreateDet({ navigate }) {
   return (
     <Box className="box">
-      <TextField variant="outlined" label="Enter Det name" />
-      <br />
-      <Button
-        variant="contained"
-        color="primary"
-        onClick={() => {
-          navigate("../manage");
-        }}
-      >
-        Create Det
-      </Button>
+      <Box className="settingsBox">
+        <TextField variant="outlined" label="Enter Det name" />
+        <br />
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={() => {
+            navigate("../manage");
+          }}
+        >
+          Create Det
+        </Button>
 
-      <Navbar />
+        <Navbar />
+      </Box>
     </Box>
   );
 }
