@@ -6,13 +6,21 @@
   background-color: rgb(179, 204, 212);
 }
 
-// margin: auto;
-// display: flex;
-// flex-direction: column;
-// width: 200px;
-// height: 350px;
-// align-items: center;
-// margin: 10vh auto;
-// border: 15px solid rgb(219, 213, 213);
-// border-radius: 20px;
-// padding: 10vh;
+.loginBox,
+.homeBox {
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.personnelBox {
+  height: 55vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20vh;
+}

@@ -8,40 +8,45 @@ function Login({ navigate }) {
 
   return (
     <Box className="box">
-      <TextField
-        label="User Name"
-        variant="outlined"
-        value={userName}
-        onChange={(e) => {
-          setUserName(e.target.value);
-        }}
-      />
-      <TextField
-        label="Password"
-        variant="outlined"
-        value={password}
-        onChange={(e) => {
-          setPassword(e.target.value);
-        }}
-      />
-      <Button
-        variant="contained"
-        color="primary"
-        onClick={() => {
-          navigate("/");
-        }}
-      >
-        Login
-      </Button>
-      <Button
-        variant="contained"
-        color="secondary"
-        onClick={() => {
-          navigate("/signup");
-        }}
-      >
-        Create Account
-      </Button>
+      <Box className="loginBox">
+        <TextField
+          label="User Name"
+          variant="outlined"
+          value={userName}
+          onChange={(e) => {
+            setUserName(e.target.value);
+          }}
+        />
+        <br />
+        <TextField
+          label="Password"
+          variant="outlined"
+          value={password}
+          onChange={(e) => {
+            setPassword(e.target.value);
+          }}
+        />
+        <br />
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={() => {
+            navigate("/");
+          }}
+        >
+          Login
+        </Button>
+        <br />
+        <Button
+          variant="contained"
+          color="secondary"
+          onClick={() => {
+            navigate("/signup");
+          }}
+        >
+          Create Account
+        </Button>
+      </Box>
     </Box>
   );
 }

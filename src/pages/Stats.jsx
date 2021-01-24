@@ -13,19 +13,22 @@ function Stats() {
   return (
     <Box className="box">
       <Headline />
-      {sleepData.map((sleepObj, index) => {
-        return (
-          <Sleep
-            key={index}
-            wentToSleep={sleepObj.wentToSleep}
-            wokeUp={sleepObj.wokeUp}
-          />
-        );
-      })}
-      <br />
-      <Fab>
-        <AddIcon />
-      </Fab>
+      <Box className="personnelBox">
+        {sleepData.map((sleepObj, index) => {
+          return (
+            <Sleep
+              key={index}
+              wentToSleep={sleepObj.wentToSleep}
+              wokeUp={sleepObj.wokeUp}
+            />
+          );
+        })}
+        <br />
+        <Fab>
+          <AddIcon />
+        </Fab>
+      </Box>
+
       <Navbar />
     </Box>
   );

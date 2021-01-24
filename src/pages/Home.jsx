@@ -2,12 +2,11 @@ import React from "react";
 import { Button, Box, TextField } from "@material-ui/core";
 import Navbar from "../components/Navbar/Navbar";
 import "./App.scss";
-import "./Home.scss";
 
 function Home() {
   return (
     <Box className="box">
-      <Box className="sleepBox">
+      <Box className="homeBox">
         <Button variant="contained" color="primary">
           Sleepy Time
         </Button>

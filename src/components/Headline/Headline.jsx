@@ -5,7 +5,7 @@ import "./Headline.scss";
 function Headline() {
   return (
     <div
-      className="scsstest"
+      className="headlineBox"
       // style={{
       //   width: "calc(100% + 10vh)",
       //   height: "10vh",
