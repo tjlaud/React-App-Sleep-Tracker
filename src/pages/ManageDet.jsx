@@ -40,7 +40,7 @@ function ManageDet({ navigate }) {
 
   return (
     <Box className="box">
-      <Box className="settingsBox">
+      <Box className="manageDetTop">
         <FormControl variant="outlined" style={{ width: "80%" }}>
           <InputLabel id="det">Select a det</InputLabel>
           <Select id="det" value={selectedDet} onChange={handleChange}>
@@ -57,7 +57,6 @@ function ManageDet({ navigate }) {
           </Select>
         </FormControl>
         <br />
-
         <TextField
           variant="outlined"
           value={detName}
@@ -65,18 +64,20 @@ function ManageDet({ navigate }) {
           onChange={handleDetName}
         />
         <br />
-
         <Button variant="contained" color="primary" onClick={handleToggle}>
           {editName ? "Edit" : "Submit"}
         </Button>
-        <br />
+      </Box>
+      <br />
+      <Box className="manageDetMiddle">
         <List>
           {selectedDetObj.users?.map((userID) => {
             return <Person key={userID} userID={userID} />;
           })}
         </List>
-        <br />
-
+      </Box>
+      <br />
+      <Box className="manageDetBottom">
         <Button
           variant="contained"
           color="secondary"

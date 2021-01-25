@@ -13,7 +13,7 @@ function Stats() {
   return (
     <Box className="box">
       <Headline />
-      <Box className="personnelBox">
+      <Box className="personalBox">
         {sleepData.map((sleepObj, index) => {
           return (
             <Sleep
