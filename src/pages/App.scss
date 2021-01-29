@@ -1,3 +1,10 @@
+@mixin scrollbars($style, $width) {
+  &::-webkit-scrollbar {
+    -ms-overflow-style: $style;
+    scrollbar-width: $width;
+  }
+}
+
 .box {
   top: 0;
   width: 100%;
