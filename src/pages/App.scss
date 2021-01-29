@@ -6,13 +6,20 @@
   }
 }
 
+// @mixin desktopMedia($margin) {
+//   @media (min-width: 900px) {
+//     margin-left: $margin;
+//     margin-right: $margin;
+//   }
+// }
+
 // This defines the background for all pages.
 .box {
   top: 0;
   width: 100%;
   height: 100%;
-  max-width: 900px;
   justify-content: space-evenly;
+  align-items: center;
   text-align: center;
   overflow: hidden;
   position: fixed;
@@ -27,7 +34,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 10px;
 }
 
 .personalBox {
@@ -49,6 +55,7 @@
   height: 50vh;
   width: 100%;
   margin-top: 20vh;
+  padding-top: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -80,7 +87,6 @@
   bottom: 17vh;
   height: 15vh;
   width: 100%;
-  max-width: 900px;
 }
 
 .settingsBox {
@@ -88,7 +94,6 @@
   height: 80vh;
   width: 100%;
   margin-top: 5vh;
-  // padding-top: 20vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -100,7 +105,6 @@
   top: 5vh;
   height: 15vh;
   width: 100%;
-  max-width: 900px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -110,7 +114,7 @@
   @include scrollbars(none, none, none);
   height: 30vh;
   width: 100%;
-  margin-top: 33vh;
+  margin-top: 40vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -120,7 +124,6 @@
 .manageDetBottom {
   position: fixed;
   bottom: 10vh;
-  height: 15vh;
+  height: 10vh;
   width: 100%;
-  max-width: 900px;
 }
