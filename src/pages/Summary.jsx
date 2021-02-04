@@ -26,7 +26,7 @@ function Summary() {
   };
 
   return (
-    <Box className="box">
+    <Box>
       <Headline />
       <Box className="summaryBox">
         <FormControl variant="outlined" style={{ width: "80%" }}>

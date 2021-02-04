@@ -7,7 +7,7 @@ function Signup({ navigate }) {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   return (
-    <Box className="box">
+    <Box>
       <TextField
         label="Email Address"
         value={email}

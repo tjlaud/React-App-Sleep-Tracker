@@ -5,7 +5,7 @@ import "./App.scss";
 
 function Home() {
   return (
-    <Box className="box">
+    <Box>
       <Box className="homeBox">
         <Button variant="contained" color="primary">
           Sleepy Time

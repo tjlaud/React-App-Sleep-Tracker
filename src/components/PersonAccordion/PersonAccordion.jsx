@@ -13,7 +13,14 @@ import "./PersonAccordion.scss";
 
 function PersonAccordion(props) {
   return (
-    <Accordion style={{ width: "80%" }}>
+    <Accordion
+      style={{
+        width: "80%",
+        maxWidth: "400px",
+        background: "transparent",
+        marginTop: "5px",
+      }}
+    >
       <AccordionSummary expandIcon={<ExpandMoreIcon />}>
         <Typography variant="body1">{props.userName}</Typography>
         <SentimentVerySatisfiedIcon />

@@ -10,11 +10,12 @@ import Summary from "./pages/Summary";
 import CreateDet from "./pages/CreateDet";
 import ManageDet from "./pages/ManageDet";
 import { DummyDataContext, dummyData } from "./data/index";
+import "./App.scss";
 
 function App() {
   return (
     <DummyDataContext.Provider value={dummyData}>
-      <Router>
+      <Router className="routerBox">
         <Login path="/login" default />
         <Signup path="/signup" />
         <Home path="/" />

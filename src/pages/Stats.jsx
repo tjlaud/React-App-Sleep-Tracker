@@ -11,7 +11,7 @@ function Stats() {
   const { users } = useContext(DummyDataContext);
   const { sleepData } = users[0];
   return (
-    <Box className="box">
+    <Box>
       <Headline />
       <Box className="personalBox">
         {sleepData.map((sleepObj, index) => {

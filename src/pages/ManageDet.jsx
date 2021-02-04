@@ -39,7 +39,7 @@ function ManageDet({ navigate }) {
   };
 
   return (
-    <Box className="box">
+    <Box>
       <Box className="manageDetTop">
         <FormControl variant="outlined" style={{ width: "80%" }}>
           <InputLabel id="det">Select a det</InputLabel>

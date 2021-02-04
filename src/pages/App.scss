@@ -6,26 +6,6 @@
   }
 }
 
-// @mixin desktopMedia($margin) {
-//   @media (min-width: 900px) {
-//     margin-left: $margin;
-//     margin-right: $margin;
-//   }
-// }
-
-// This defines the background for all pages.
-.box {
-  top: 0;
-  width: 100%;
-  height: 100%;
-  justify-content: space-evenly;
-  align-items: center;
-  text-align: center;
-  overflow: hidden;
-  position: fixed;
-  background-color: rgb(179, 204, 212);
-}
-
 .loginBox,
 .homeBox,
 .settingsBox {

@@ -15,7 +15,7 @@ function Sleep({ wentToSleep, wokeUp }) {
   const durationHours = duration / 1000 / 60 / 60;
 
   return (
-    <Accordion style={{ width: "80%" }}>
+    <Accordion style={{ width: "80%", maxWidth: "500px" }}>
       <AccordionSummary expandIcon={<ExpandMoreIcon />}>
         <Typography variant="body1">
           Date from: {wentToSleep.toDateString()}
