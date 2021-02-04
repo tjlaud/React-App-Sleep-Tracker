@@ -42,7 +42,10 @@ function Settings({ navigate }) {
         {editName ? "Edit" : "Submit"}
       </Button>
       <br />
-      <FormControl variant="outlined" style={{ width: "80%" }}>
+      <FormControl
+        variant="outlined"
+        style={{ width: "80%", maxWidth: "500px" }}
+      >
         <InputLabel id="det">Select a det</InputLabel>
         <Select id="det" value={selectedDet} onChange={handleChange}>
           <MenuItem value=""></MenuItem>
