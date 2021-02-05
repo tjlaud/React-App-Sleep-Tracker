@@ -32,11 +32,11 @@
   height: 40vh;
   width: 100%;
   margin-top: 20vh;
-  @extend %flexbox-center;
-  // display: flex;
-  // flex-direction: column;
-  // align-items: center;
-  // overflow: auto;
+  // @extend %flexbox-center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: auto;
 }
 
 // summaryBox working as advertised.
