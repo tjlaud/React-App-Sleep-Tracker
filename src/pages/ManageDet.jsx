@@ -40,7 +40,7 @@ function ManageDet({ navigate }) {
 
   return (
     <Box>
-      <Box className="manageDetTop">
+      <div className="manageDetTop">
         <FormControl variant="outlined" style={{ width: "80%" }}>
           <InputLabel id="det">Select a det</InputLabel>
           <Select id="det" value={selectedDet} onChange={handleChange}>
@@ -67,7 +67,7 @@ function ManageDet({ navigate }) {
         <Button variant="contained" color="primary" onClick={handleToggle}>
           {editName ? "Edit" : "Submit"}
         </Button>
-      </Box>
+      </div>
       <br />
       <Box className="manageDetMiddle">
         <List>

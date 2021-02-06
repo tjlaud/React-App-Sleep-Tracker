@@ -15,93 +15,66 @@
   align-items: center;
 }
 
-// css
-.loginBox,
-.homeBox,
-.settingsBox {
-  height: 85vh;
-  @extend %flexbox-center;
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: center;
-  // align-items: center;;
-}
-
-.personalBox {
-  @include scrollbars(none, none, none);
-  height: 40vh;
-  width: 100%;
-  margin-top: 20vh;
-  // @extend %flexbox-center;
+%flexbox-expanding {
   display: flex;
   flex-direction: column;
   align-items: center;
   overflow: auto;
 }
 
-// summaryBox working as advertised.
-// settingsBox still needs some work. It's a bit messy but technically "works"
+// css
+.loginBox,
+.homeBox,
+.settingsBox {
+  height: 85vh;
+  @extend %flexbox-center;
+}
 
+// sleep data display on Personal page.
+.personalBox {
+  @include scrollbars(none, none, none);
+  height: 47vh;
+  width: 100%;
+  margin-top: 20vh;
+  @extend %flexbox-expanding;
+}
+
+// user overview on the Group page.
 .summaryBox {
   @include scrollbars(none, none, none);
-  height: 50vh;
+  height: 55vh;
   width: 100%;
   margin-top: 20vh;
   padding-top: 10px;
-  @extend %flexbox-center;
-  // display: flex;
-  // flex-direction: column;
-  // align-items: center;
-  // overflow: auto;
+  @extend %flexbox-expanding;
 }
 
-.usersBox {
-  @include scrollbars(none, none, none);
-  height: 30vh;
-  width: 100%;
-  margin-top: 48vh;
-  @extend %flexbox-center;
-  // display: flex;
-  // flex-direction: column;
-  // align-items: center;
-  // overflow: auto;
-  justify-content: center;
-}
-
-.selectBox {
-  position: fixed;
-  top: 5vh;
-  height: 15vh;
-  width: 100%;
-  max-width: 900px;
-}
-
+// fab on stats page
 .fabBox {
   position: fixed;
   bottom: 17vh;
-  height: 15vh;
+  height: 10vh;
   width: 100%;
 }
 
+// the Settings page
 .settingsBox {
   @include scrollbars(none, none, none);
   height: 80vh;
   width: 100%;
   margin-top: 5vh;
   @extend %flexbox-center;
-  // display: flex;
-  // flex-direction: column;
-  // align-items: center;
-  // overflow: auto;
 }
 
+// FIX ME. manage det works but is messy. I think @media is goign to be needed.
 .manageDetTop {
   position: fixed;
-  top: 10px;
+  top: 5px;
+  padding-top: 5px;
+  margin-top: 5px;
   height: 40%;
   width: 100%;
-  display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
   align-items: center;
   overflow: auto;
@@ -109,13 +82,10 @@
 
 .manageDetMiddle {
   @include scrollbars(none, none, none);
-  height: 40%;
+  height: 40vh;
   width: 100%;
-  margin-top: 40%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  overflow: auto;
+  margin-top: 35vh;
+  @extend %flexbox-expanding;
 }
 
 .manageDetBottom {
