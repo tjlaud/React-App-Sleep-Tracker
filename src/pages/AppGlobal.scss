@@ -1,0 +1,23 @@
+// This will go in mixin.scss
+@mixin scrollbars($style, $width, $display) {
+  &::-webkit-scrollbar {
+    -ms-overflow-style: $style;
+    scrollbar-width: $width;
+    display: $display;
+  }
+}
+
+// Extended inheritance
+%flexbox-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+%flexbox-expanding {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: auto;
+}

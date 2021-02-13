@@ -1,55 +1,22 @@
-// This will go in mixin.scss
-@mixin scrollbars($style, $width, $display) {
-  &::-webkit-scrollbar {
-    -ms-overflow-style: $style;
-    scrollbar-width: $width;
-    display: $display;
-  }
-}
+@import "./AppGlobal.scss";
 
-// Extended inheritance
-%flexbox-center {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-%flexbox-expanding {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  overflow: auto;
-}
-
-// css
+// login, home and settings pages
 .loginBox,
 .homeBox,
 .settingsBox {
-  height: 85vh;
   @extend %flexbox-center;
+  height: 85vh;
 }
 
 // sleep data display on Personal page.
 .personalBox {
   @include scrollbars(none, none, none);
+  @extend %flexbox-expanding;
   height: 47vh;
   width: 100%;
   margin-top: 20vh;
-  @extend %flexbox-expanding;
 }
-
-// user overview on the Group page.
-.summaryBox {
-  @include scrollbars(none, none, none);
-  height: 55vh;
-  width: 100%;
-  margin-top: 20vh;
-  padding-top: 10px;
-  @extend %flexbox-expanding;
-}
-
-// fab on stats page
+// fab on Personal page
 .fabBox {
   position: fixed;
   bottom: 17vh;
@@ -57,37 +24,29 @@
   width: 100%;
 }
 
-// the Settings page
-.settingsBox {
+// summary page. expanding data for crew members
+.summaryBox {
   @include scrollbars(none, none, none);
-  height: 80vh;
+  @extend %flexbox-expanding;
+  height: 55vh;
   width: 100%;
-  margin-top: 5vh;
-  @extend %flexbox-center;
+  margin-top: 20vh;
+  padding-top: 10px;
 }
 
-// FIX ME. manage det works but is messy. I think @media is goign to be needed.
+// manageDet
 .manageDetTop {
-  position: fixed;
-  top: 5px;
-  padding-top: 5px;
-  margin-top: 5px;
-  height: 40%;
+  @extend %flexbox-center;
+  height: 27vh;
   width: 100%;
-  justify-content: flex-start;
-  flex-direction: column;
-  align-items: center;
-  overflow: auto;
+  margin-top: 7vh;
 }
-
 .manageDetMiddle {
   @include scrollbars(none, none, none);
-  height: 40vh;
-  width: 100%;
-  margin-top: 35vh;
   @extend %flexbox-expanding;
+  height: 55vh;
+  width: 100%;
 }
-
 .manageDetBottom {
   position: fixed;
   bottom: 10vh;
