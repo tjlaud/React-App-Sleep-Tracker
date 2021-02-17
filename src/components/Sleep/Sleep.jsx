@@ -8,7 +8,7 @@ import {
   TextField,
 } from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import "./Sleep.scss";
+import styles from "./Sleep.module.scss";
 
 function Sleep({ wentToSleep, wokeUp }) {
   const duration = wokeUp.getTime() - wentToSleep.getTime();
@@ -46,7 +46,12 @@ function Sleep({ wentToSleep, wokeUp }) {
             shrink: true,
           }}
         />
-        <Button variant="contained" color="primary">
+        {/* the code below is demonstrating how to use the classes prop to overwrite a style*/}
+        <Button
+          variant="contained"
+          color="primary"
+          classes={{ containedPrimary: styles.containedPrimary }}
+        >
           Save
         </Button>
         <Button variant="contained" color="secondary">
