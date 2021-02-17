@@ -6,6 +6,7 @@ import Headline from "../components/Headline/Headline";
 import Sleep from "../components/Sleep/Sleep";
 import { DummyDataContext } from "../data/index";
 import "./App.scss";
+import "./AppGlobal.scss";
 
 function Stats() {
   const { users } = useContext(DummyDataContext);

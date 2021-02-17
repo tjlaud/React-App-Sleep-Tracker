@@ -11,6 +11,7 @@ import Headline from "../components/Headline/Headline";
 import PersonAccordion from "../components/PersonAccordion/PersonAccordion";
 import { DummyDataContext } from "../data/index";
 import "./App.scss";
+import "./AppGlobal.scss";
 
 function Summary() {
   const { users } = useContext(DummyDataContext);

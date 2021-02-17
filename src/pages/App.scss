@@ -1,26 +1,4 @@
-// This will go in mixin.scss
-@mixin scrollbars($style, $width, $display) {
-  &::-webkit-scrollbar {
-    -ms-overflow-style: $style;
-    scrollbar-width: $width;
-    display: $display;
-  }
-}
-
-// Extended inheritance
-%flexbox-center {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-%flexbox-expanding {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  overflow: auto;
-}
+@import "./AppGlobal.scss";
 
 // css
 .loginBox,
@@ -66,7 +44,7 @@
   @extend %flexbox-center;
 }
 
-// FIX ME. manage det works but is messy. I think @media is goign to be needed.
+// ManageDet page
 .manageDetTop {
   position: fixed;
   height: fit-content;
@@ -90,6 +68,7 @@
   width: 100%;
 }
 
+// Using this section to space the three children of ManageDetTop because it won't seem to work doing it the normal way
 #root > div > div > div.manageDetTop > div:nth-child(1),
 #root
   > div

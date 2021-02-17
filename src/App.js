@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.scss";
+import "./pages/App.scss";
 import { Router } from "@reach/router";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
@@ -10,7 +10,6 @@ import Summary from "./pages/Summary";
 import CreateDet from "./pages/CreateDet";
 import ManageDet from "./pages/ManageDet";
 import { DummyDataContext, dummyData } from "./data/index";
-import "./App.scss";
 
 function App() {
   return (

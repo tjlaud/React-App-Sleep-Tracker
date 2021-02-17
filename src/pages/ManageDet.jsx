@@ -13,6 +13,7 @@ import Navbar from "../components/Navbar/Navbar";
 import Person from "../components/Person/Person";
 import { DummyDataContext } from "../data/index";
 import "./App.scss";
+import "./AppGlobal.scss";
 
 function ManageDet({ navigate }) {
   const { users } = useContext(DummyDataContext);

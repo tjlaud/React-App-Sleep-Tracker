@@ -2,6 +2,7 @@ import React from "react";
 import { Button, Box, TextField } from "@material-ui/core";
 import Navbar from "../components/Navbar/Navbar";
 import "./App.scss";
+import "./AppGlobal.scss";
 
 function Home() {
   return (

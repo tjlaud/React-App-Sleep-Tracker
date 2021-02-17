@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { TextField, Button, Box } from "@material-ui/core";
 import "./App.scss";
+import "./AppGlobal.scss";
 
 function Signup({ navigate }) {
   const [email, setEmail] = useState("");

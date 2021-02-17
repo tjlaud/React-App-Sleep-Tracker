@@ -11,6 +11,7 @@ import {
 import Navbar from "../components/Navbar/Navbar";
 import { DummyDataContext } from "../data/index";
 import "./App.scss";
+import "./AppGlobal.scss";
 
 function Settings({ navigate }) {
   const { users } = useContext(DummyDataContext);
