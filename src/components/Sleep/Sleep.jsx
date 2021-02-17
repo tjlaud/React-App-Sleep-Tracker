@@ -8,6 +8,8 @@ import {
   TextField,
 } from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+
+// after renaming the file to Sleep.module.scss, you can do this... (now scroll down to line 51)
 import styles from "./Sleep.module.scss";
 
 function Sleep({ wentToSleep, wokeUp }) {
