@@ -41,10 +41,7 @@ function ManageDet({ navigate }) {
   return (
     <Box>
       <div className="manageDetTop">
-        <FormControl
-          style={{ width: "80%", maxWidth: "500px" }}
-          variant="outlined"
-        >
+        <FormControl variant="outlined" style={{ width: "80%" }}>
           <InputLabel id="det">Select a det</InputLabel>
           <Select id="det" value={selectedDet} onChange={handleChange}>
             <MenuItem value=""></MenuItem>
