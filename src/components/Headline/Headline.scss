@@ -1,6 +1,8 @@
+@import "../../pages/AppGlobal.scss";
+
 .headlineBox {
   position: fixed;
-  background-color: #e6c17e;
+  background-color: $colour-deepBlue;
   top: 0;
   height: 15vh;
   width: 100%;

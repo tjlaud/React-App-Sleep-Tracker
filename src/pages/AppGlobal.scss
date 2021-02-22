@@ -1,3 +1,6 @@
+$colour-deepBlue: #4b5796;
+$colour-lightBlue: #a0bfde;
+
 // This will go in mixin.scss
 @mixin scrollbars($style, $width, $display) {
   &::-webkit-scrollbar {

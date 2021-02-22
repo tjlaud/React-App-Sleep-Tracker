@@ -2,12 +2,17 @@ import React from "react";
 import { Button, Box, TextField } from "@material-ui/core";
 import Navbar from "../components/Navbar/Navbar";
 import "./App.scss";
+import styles from "./App.module.scss";
 
 function Home() {
   return (
     <Box>
       <Box className="homeBox">
-        <Button variant="contained" color="primary">
+        <Button
+          variant="contained"
+          color="primary"
+          classes={{ containedPrimary: styles.containedButtonDeepBlue }}
+        >
           Sleepy Time
         </Button>
         <br />
@@ -23,7 +28,11 @@ function Home() {
           }}
         />
         <br />
-        <Button variant="contained" color="primary">
+        <Button
+          variant="contained"
+          color="primary"
+          classes={{ containedPrimary: styles.containedButtonDeepBlue }}
+        >
           Undo
         </Button>
       </Box>

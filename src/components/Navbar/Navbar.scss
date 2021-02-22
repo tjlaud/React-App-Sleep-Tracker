@@ -1,17 +1,16 @@
+@import "../../pages/AppGlobal.scss";
+
 .Navbar {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #e6c17e;
+  background-color: $colour-lightBlue;
 }
 
 .navBox {
   position: fixed;
-  background-color: #e6c17e;
+  background-color: $colour-lightBlue;
   bottom: 0;
   min-height: fit-content;
   width: 100%;
 }
-
-// #90caf9
-// b3c7d6ff

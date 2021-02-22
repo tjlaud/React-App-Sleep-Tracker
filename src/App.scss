@@ -1,3 +1,5 @@
+@import "./pages/AppGlobal.scss";
+
 .routerBox,
 .Router {
   top: 0;
@@ -9,5 +11,5 @@
   text-align: center;
   overflow: hidden;
   position: fixed;
-  background-color: rgb(179, 204, 212);
+  background-color: $colour-lightBlue;
 }

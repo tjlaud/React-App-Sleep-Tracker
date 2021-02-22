@@ -1,6 +1,8 @@
 // could have called this class whatever we want
 // using !important is a dirty css trick, but it prevents
 // material UI from using it's own colouring
+@import "../../pages/AppGlobal.scss";
+
 .containedPrimary {
-  background-color: purple !important;
+  background-color: $colour-deepBlue !important;
 }

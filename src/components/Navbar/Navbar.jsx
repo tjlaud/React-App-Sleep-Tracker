@@ -10,6 +10,7 @@ import PersonIcon from "@material-ui/icons/Person";
 import HomeIcon from "@material-ui/icons/Home";
 import SettingsIcon from "@material-ui/icons/Settings";
 import "./Navbar.scss";
+import styles from "./Navbar.module.scss";
 
 function Navbar() {
   const [value, setValue] = useState("home");
@@ -33,7 +34,7 @@ function Navbar() {
       <BottomNavigation
         className="Navbar"
         value={value}
-        style={{ backgroundColor: "#e6c17e" }}
+        style={{ backgroundColor: "#a0bfde" }}
       >
         <BottomNavigationAction
           label="Home"
@@ -41,6 +42,11 @@ function Navbar() {
           icon={<HomeIcon />}
           onClick={() => {
             navigate("/");
+          }}
+          classes={{
+            iconOnly: styles.navButtonIcon,
+            selected: styles.navButtonSelected,
+            label: styles.navButtonSelected,
           }}
         />
         <BottomNavigationAction
@@ -50,6 +56,11 @@ function Navbar() {
           onClick={() => {
             navigate("/stats");
           }}
+          classes={{
+            iconOnly: styles.navButtonIcon,
+            selected: styles.navButtonSelected,
+            label: styles.navButtonSelected,
+          }}
         />
         <BottomNavigationAction
           label="Group"
@@ -58,6 +69,11 @@ function Navbar() {
           onClick={() => {
             navigate("/summary");
           }}
+          classes={{
+            iconOnly: styles.navButtonIcon,
+            selected: styles.navButtonSelected,
+            label: styles.navButtonSelected,
+          }}
         />
         <BottomNavigationAction
           label="Settings"
@@ -65,6 +81,11 @@ function Navbar() {
           icon={<SettingsIcon />}
           onClick={() => {
             navigate("/settings");
+          }}
+          classes={{
+            iconOnly: styles.navButtonIcon,
+            selected: styles.navButtonSelected,
+            label: styles.navButtonSelected,
           }}
         />
       </BottomNavigation>

@@ -10,7 +10,7 @@ import {
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 // after renaming the file to Sleep.module.scss, you can do this... (now scroll down to line 51)
-import styles from "./Sleep.module.scss";
+import styles from "../../pages/App.module.scss";
 
 function Sleep({ wentToSleep, wokeUp }) {
   const duration = wokeUp.getTime() - wentToSleep.getTime();
@@ -52,11 +52,15 @@ function Sleep({ wentToSleep, wokeUp }) {
         <Button
           variant="contained"
           color="primary"
-          classes={{ containedPrimary: styles.containedPrimary }}
+          classes={{ containedPrimary: styles.containedButtonDeepBlue }}
         >
           Save
         </Button>
-        <Button variant="contained" color="secondary">
+        <Button
+          variant="contained"
+          color="secondary"
+          classes={{ containedSecondary: styles.containedButtonLightBlue }}
+        >
           Delete
         </Button>
       </AccordionDetails>
