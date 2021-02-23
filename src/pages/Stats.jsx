@@ -6,6 +6,7 @@ import Headline from "../components/Headline/Headline";
 import Sleep from "../components/Sleep/Sleep";
 import { DummyDataContext } from "../data/index";
 import "./App.scss";
+import styles from "./App.module.scss";
 
 function Stats() {
   const { users } = useContext(DummyDataContext);
@@ -26,7 +27,7 @@ function Stats() {
       </Box>
       <br />
       <Box className="fabBox">
-        <Fab>
+        <Fab classes={{ root: styles.fabButtonDeepBlue }}>
           <AddIcon />
         </Fab>
       </Box>

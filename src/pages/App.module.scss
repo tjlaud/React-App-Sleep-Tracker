@@ -7,3 +7,8 @@
 .containedButtonLightBlue {
   background-color: rgb(123, 108, 138) !important;
 }
+
+.fabButtonDeepBlue {
+  background-color: $colour-deepBlue !important;
+  color: $colour-lightBlue !important;
+}

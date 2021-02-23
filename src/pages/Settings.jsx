@@ -11,6 +11,7 @@ import {
 import Navbar from "../components/Navbar/Navbar";
 import { DummyDataContext } from "../data/index";
 import "./App.scss";
+import styles from "./App.module.scss";
 
 function Settings({ navigate }) {
   const { users } = useContext(DummyDataContext);
@@ -38,7 +39,12 @@ function Settings({ navigate }) {
         disabled={editName}
       />
       <br />
-      <Button variant="contained" color="primary" onClick={handleToggle}>
+      <Button
+        variant="contained"
+        color="primary"
+        onClick={handleToggle}
+        classes={{ containedPrimary: styles.containedButtonDeepBlue }}
+      >
         {editName ? "Edit" : "Submit"}
       </Button>
       <br />
@@ -61,7 +67,11 @@ function Settings({ navigate }) {
         </Select>
       </FormControl>
       <br />
-      <Button variant="contained" color="primary">
+      <Button
+        variant="contained"
+        color="primary"
+        classes={{ containedPrimary: styles.containedButtonDeepBlue }}
+      >
         Join det
       </Button>
       <br />
@@ -74,6 +84,7 @@ function Settings({ navigate }) {
             onClick={() => {
               navigate("create");
             }}
+            classes={{ containedPrimary: styles.containedButtonDeepBlue }}
           >
             Create a det
           </Button>
@@ -85,6 +96,7 @@ function Settings({ navigate }) {
             onClick={() => {
               navigate("manage");
             }}
+            classes={{ containedPrimary: styles.containedButtonDeepBlue }}
           >
             Manage a det
           </Button>
