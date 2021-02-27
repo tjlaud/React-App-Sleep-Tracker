@@ -1,11 +1,16 @@
 @import "./AppGlobal.scss";
 
-.containedButtonDay {
+.containedButtonDeepBlue {
   background-color: $colour-deepBlue !important;
 }
 
-.containedButtonNightHidden {
+.containedButtonLightBlue {
   background-color: rgb(123, 108, 138) !important;
+}
+
+.fabButtonDeepBlue {
+  background-color: $colour-deepBlue !important;
+  color: $colour-lightBlue !important;
 }
 
 .hidden {
