@@ -8,23 +8,30 @@ class Home extends React.Component {
   constructor() {
     super();
     this.state = {
-      containedPrimary: styles.containedButtonDeepBlue,
+      isDay: true,
     };
   }
 
   render() {
+    const { isDay } = this.state;
+
     return (
       <Box>
         <Box className="homeBox">
           <Button
             variant="contained"
             color="primary"
-            classes={this.state}
+            classes={{
+              containedPrimary: isDay
+                ? styles.containedButtonDay
+                : styles.containedButtonNight,
+            }}
             onClick={() => {
               // handleChange function to switch states
+              this.setState({ isDay: false });
             }}
           >
-            Sleepy Time
+            {isDay ? "Sleepy Time" : "Click the button below to wake up"}
           </Button>
           <br />
           <TextField
@@ -52,10 +59,11 @@ class Home extends React.Component {
             color="primary"
             classes={{
               containedPrimary: styles.containedButtonDeepBlue,
-              containedPrimary: styles.hidden, // this is temporary
+              // containedPrimary: styles.hidden, // this is temporary
             }}
             onClick={() => {
               // set state here to "nightMode"
+              this.setState({ isDay: true });
             }}
           >
             Wake Up
