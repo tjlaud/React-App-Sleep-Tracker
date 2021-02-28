@@ -42,6 +42,8 @@ function Home() {
           inputProps={{
             step: 300, // 5 min...this doesn't seem to be working as expected
           }}
+          // need to figure out how to change the colour of the texfield label.
+          classes={{ root: isDay ? null : styles.hidden }}
         />
         <br />
         <Button
@@ -67,7 +69,9 @@ function Home() {
           Wake Up
         </Button>
       </Box>
-      <Navbar />
+      <Box display={isDay ? null : "none"}>
+        <Navbar />
+      </Box>
     </Box>
   );
 }
