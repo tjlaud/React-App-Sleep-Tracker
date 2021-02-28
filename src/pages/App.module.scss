@@ -1,16 +1,27 @@
 @import "./AppGlobal.scss";
 
-.containedButtonDay {
+.containedButtonDeepBlue {
   background-color: $colour-deepBlue !important;
 }
-.containedButtonNight {
-  background-color: rgb(123, 108, 138) !important;
-}
-
-.containedButtonNightHidden {
-  background-color: rgb(123, 108, 138) !important;
+.containedButtonLightBlue {
+  background-color: $colour-greyPurple !important;
 }
 
 .hidden {
   display: none !important;
+}
+
+.containedButtonDay {
+  background-color: $colour-deepBlue !important;
+}
+
+.containedButtonNight,
+.containedButtonLabelNight {
+  background-color: $colour-greyPurple !important;
+  color: rgb(33, 29, 41);
+}
+
+.nightOverlay {
+  background-color: black !important;
+  height: 100% !important;
 }

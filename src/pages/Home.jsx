@@ -5,15 +5,18 @@ import "./App.scss";
 import styles from "./App.module.scss";
 
 function Home() {
-  const [isDay, setIsDay] = useState(true); // onClick functions need handlers to use setIsDay as opposed to setState
-  // const { isDay } = this.state;
+  const [isDay, setIsDay] = useState(true);
 
   const handleChange = () => {
     setIsDay(!isDay);
   };
 
   return (
-    <Box>
+    <Box
+      classes={{
+        root: isDay ? null : styles.nightOverlay,
+      }}
+    >
       <Box className="homeBox">
         <Button
           variant="contained"
@@ -22,8 +25,8 @@ function Home() {
             containedPrimary: isDay
               ? styles.containedButtonDay
               : styles.containedButtonNight,
+            label: isDay ? null : styles.containedButtonLabelNight,
           }}
-          // CHANGE TO: handleChange function to switch states
           onClick={handleChange}
         >
           {isDay ? "Sleepy Time" : "Wake up"}
@@ -44,7 +47,9 @@ function Home() {
         <Button
           variant="contained"
           color="primary"
-          classes={{ containedPrimary: styles.containedButtonDeepBlue }}
+          classes={{
+            containedPrimary: isDay ? styles.containedButtonDay : styles.hidden,
+          }}
         >
           Undo
         </Button>
@@ -53,11 +58,9 @@ function Home() {
           variant="contained"
           color="primary"
           classes={{
-            containedPrimary: styles.containedButtonDeepBlue,
-            // containedPrimary: styles.hidden, // this is temporary
+            containedPrimary: isDay ? styles.containedButtonDay : styles.hidden,
           }}
           onClick={() => {
-            // set state here to "nightMode"
             this.setState({ isDay: true });
           }}
         >
