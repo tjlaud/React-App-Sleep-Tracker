@@ -7,23 +7,22 @@
   background-color: $colour-greyPurple !important;
 }
 
-.hidden {
-  display: none !important;
-}
-
 .containedButtonDay {
   background-color: $colour-deepBlue !important;
 }
 
+.hidden {
+  display: none !important;
+}
+//        HOME SCREEN DAY NIGHT MODE
 .containedButtonNight,
 .containedButtonLabelNight {
   background-color: #38416f !important;
+  z-index: 1;
   color: rgb(165, 172, 236);
 }
 
 .nightOverlay {
-  // background-color: black !important;
-  // background: rgb(17, 19, 34) !important;
   background: linear-gradient(
     180deg,
     rgba(17, 19, 34, 1) 0%,
@@ -31,13 +30,4 @@
     rgba(56, 65, 111, 1) 100%
   ) !important;
   height: 100% !important;
-}
-
-.textFieldNight {
-  color: rgb(165, 172, 236) !important;
-  background-color: blanchedalmond !important;
-}
-
-.input {
-  color: rgb(165, 172, 236);
 }

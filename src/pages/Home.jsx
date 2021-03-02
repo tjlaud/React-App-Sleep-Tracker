@@ -72,6 +72,8 @@ function Home() {
       <Box display={isDay ? null : "none"}>
         <Navbar />
       </Box>
+      <div className={isDay ? null : "starsOverlay"}></div>
+      <div className={isDay ? null : "twinklingOverlay"}></div>
     </Box>
   );
 }

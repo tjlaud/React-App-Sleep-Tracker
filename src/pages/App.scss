@@ -53,3 +53,36 @@
   height: 10vh;
   width: 100%;
 }
+
+// Nighttime Stars
+
+.starsOverlay,
+.twinklingOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.starsOverlay {
+  background: #000 url("../images/stars.png") repeat top center;
+  background-image: url("../images/stars.png") repeat top center;
+  z-index: 0;
+}
+
+.twinklingOverlay {
+  background: #000 url("../images/twinkling.png") repeat top center;
+}
+
+@keyframes twinkling {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -10000px 0;
+  }
+}
