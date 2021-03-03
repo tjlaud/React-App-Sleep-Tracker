@@ -56,18 +56,6 @@ function Home() {
           Undo
         </Button>
         <br />
-        <Button
-          variant="contained"
-          color="primary"
-          classes={{
-            containedPrimary: isDay ? styles.containedButtonDay : styles.hidden,
-          }}
-          onClick={() => {
-            this.setState({ isDay: true });
-          }}
-        >
-          Wake Up
-        </Button>
       </Box>
       <Box display={isDay ? null : "none"}>
         <Navbar />
