@@ -7,7 +7,6 @@ import {
   MenuItem,
 } from "@material-ui/core";
 import Navbar from "../components/Navbar/Navbar";
-import Headline from "../components/Headline/Headline";
 import PersonAccordion from "../components/PersonAccordion/PersonAccordion";
 import { DummyDataContext } from "../data/index";
 import "./App.scss";
@@ -27,7 +26,6 @@ function Summary() {
 
   return (
     <Box>
-      <Headline />
       <Box className="summaryBox">
         <FormControl
           variant="outlined"

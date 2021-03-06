@@ -11,6 +11,8 @@ import CreateDet from "./pages/CreateDet";
 import ManageDet from "./pages/ManageDet";
 import { DummyDataContext, dummyData } from "./data/index";
 import "./App.scss";
+import Navbar from "./components/Navbar/Navbar";
+import Headline from "./components/Headline/Headline";
 /* Hi Tom, this is going to explain how I propose we get the header and navbar to remain on the page throughout. Right, so below when we render the App component, all
 we're doing is rendering a router at the moment. That's fine and is pretty close to what we want. 
 
@@ -26,6 +28,7 @@ function App() {
   return (
     // <<< we can put a <Header /> component in here
     <DummyDataContext.Provider value={dummyData}>
+      <Headline />
       <Router className="routerBox">
         <Login path="/login" default />
         <Signup path="/signup" />
@@ -36,6 +39,7 @@ function App() {
         <ManageDet path="/settings/manage" />
         <Summary path="/summary" />
       </Router>
+      {/* <Navbar></Navbar> */}
     </DummyDataContext.Provider>
     // <<< we can put a <Navbar /> component in here
   );
