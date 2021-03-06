@@ -12,6 +12,8 @@ import SettingsIcon from "@material-ui/icons/Settings";
 import "./Navbar.scss";
 import styles from "./Navbar.module.scss";
 
+// Location context provider (the thing that tells useNavigate which location to go to) is not in the parent folder.
+
 function Navbar() {
   const [value, setValue] = useState("home");
   const navigate = useNavigate();
