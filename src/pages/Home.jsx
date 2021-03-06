@@ -58,6 +58,7 @@ function Home() {
         <br />
       </Box>
       <Box display={isDay ? null : "none"}>
+        {/* the Box and Navbar lines will need to go. Sleep mode needs to cover them up */}
         <Navbar />
       </Box>
       <div className={isDay ? null : "starsOverlay"}></div>
