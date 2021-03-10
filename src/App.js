@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.scss";
-import { Router } from "@reach/router";
+import { LocationProvider, Router } from "@reach/router";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Home from "./pages/Home";
@@ -25,32 +25,36 @@ This is not as simple as it sounds and will involved quite a bit of jiggery poke
 
 Doing this will probably be quite challenging and definitely improve your understanding of React, don't be disheartened if progress is slow to start off with.*/
 
+// Problem 1
 // State here that Navbar can change.
 //          (a function that returns the navbar location)
 // Pass this function down to Navbar as a {prop}
 // Then Navbar can change the {prop} and it will update here..... maybe?
 
+// Problem 2
 // The navbar needs to know what element to highlight.
 // Probably something on the global window object. Something like window.pathname...?
 
 function App() {
+  function updateNavigation() {}
+
   return (
-    // <<< we can put a <Header /> component in here
-    <DummyDataContext.Provider value={dummyData}>
+    <LocationProvider>
       <Headline />
-      <Router className="routerBox">
-        <Login path="/login" default />
-        <Signup path="/signup" />
-        <Home path="/" />
-        <Stats path="/stats" />
-        <Settings path="/settings" />
-        <CreateDet path="/settings/create" />
-        <ManageDet path="/settings/manage" />
-        <Summary path="/summary" />
-      </Router>
-      {/* <Navbar></Navbar> */}
-    </DummyDataContext.Provider>
-    // <<< we can put a <Navbar /> component in here
+      <DummyDataContext.Provider value={dummyData}>
+        <Router className="routerBox">
+          <Login path="/login" default />
+          <Signup path="/signup" />
+          <Home path="/" />
+          <Stats path="/stats" />
+          <Settings path="/settings" />
+          <CreateDet path="/settings/create" />
+          <ManageDet path="/settings/manage" />
+          <Summary path="/summary" />
+        </Router>
+      </DummyDataContext.Provider>
+      <Navbar></Navbar>
+    </LocationProvider>
   );
 }
 
