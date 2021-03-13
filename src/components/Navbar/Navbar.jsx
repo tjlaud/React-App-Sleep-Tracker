@@ -12,8 +12,6 @@ import SettingsIcon from "@material-ui/icons/Settings";
 import "./Navbar.scss";
 import styles from "./Navbar.module.scss";
 
-// Location context provider (the thing that tells useNavigate which location to go to) is not in the parent folder.
-
 function Navbar() {
   const [value, setValue] = useState("home");
   const navigate = useNavigate();
@@ -26,9 +24,33 @@ function Navbar() {
   }, []);
 
   // if we make the navbar stay on the page we'll want to use this,
-  // pass it in as an onChange prop to <BottomNavigation>
   // const handleChange = (event, newValue) => {
   //   setValue(newValue);
+  // };
+  // pass it in as an onChange prop to <BottomNavigation>
+  // const handleChange = (newValue) => {
+  //   setValue(newValue);
+  // };
+
+  // componentWillReceiveProps(newProps) {
+  //   const {pathname} = newProps.location;
+  //   const {pathMap} = this.state;
+
+  //   const value = pathMap.indexOf(pathname);
+
+  // };
+
+  handleChange = (event, value) => {
+    this.setState(value);
+  };
+
+  // the path name is now stored in newValue.
+  // newValue now needs to become a prop so that it can be "sent back up" to App.js
+  // App.js will then execute the Navigate function
+
+  // The prop needs to be created in App.js then in Navbar we can update the prop each time handleChange is executed. Something like this below.
+  // const ChildComponent = (props) => {
+  //   return <p>I'm the 1st child!</p>;
   // };
 
   return (
@@ -37,6 +59,7 @@ function Navbar() {
         className="Navbar"
         value={value}
         style={{ backgroundColor: "#a0bfde" }}
+        onChange={this.handleChange}
       >
         <BottomNavigationAction
           label="Home"
