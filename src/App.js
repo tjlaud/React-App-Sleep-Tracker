@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.scss";
 import { LocationProvider, Router } from "@reach/router";
 import Login from "./pages/Login";
@@ -28,15 +28,25 @@ Doing this will probably be quite challenging and definitely improve your unders
 // Problem 1
 // State here that Navbar can change.
 //          (a function that returns the navbar location)
+//    const [value, setValue] = useState({props.location}); something like this.
+
 // Pass this function down to Navbar as a {prop}
 // Then Navbar can change the {prop} and it will update here..... maybe?
+
+//    a navigation function maybe inserted into the <nvbar> element.
 
 // Problem 2
 // The navbar needs to know what element to highlight.
 // Probably something on the global window object. Something like window.pathname...?
 
 function App() {
-  function updateNavigation() {}
+  // const navigate = useNavigate();
+
+  // const updateNavigation = (props) => {
+  //   props.location =
+  // };
+
+  // const [value, setValue] = useState(props.location);
 
   return (
     <LocationProvider>
