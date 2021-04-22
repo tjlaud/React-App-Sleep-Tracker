@@ -12,61 +12,23 @@ import SettingsIcon from "@material-ui/icons/Settings";
 import "./Navbar.scss";
 import styles from "./Navbar.module.scss";
 
-function Navbar() {
-  const [value, setValue] = useState("home");
+function Navbar(props) {
   const navigate = useNavigate();
-
-  const location = useLocation();
-
-  useEffect(() => {
-    const path = location.pathname;
-    setValue(path.split("/")[1]);
-  }, []);
-
-  // if we make the navbar stay on the page we'll want to use this,
-  // const handleChange = (event, newValue) => {
-  //   setValue(newValue);
-  // };
-  // pass it in as an onChange prop to <BottomNavigation>
-  // const handleChange = (newValue) => {
-  //   setValue(newValue);
-  // };
-
-  // componentWillReceiveProps(newProps) {
-  //   const {pathname} = newProps.location;
-  //   const {pathMap} = this.state;
-
-  //   const value = pathMap.indexOf(pathname);
-
-  // };
-
-  handleChange = (event, value) => {
-    this.setState(value);
-  };
-
-  // the path name is now stored in newValue.
-  // newValue now needs to become a prop so that it can be "sent back up" to App.js
-  // App.js will then execute the Navigate function
-
-  // The prop needs to be created in App.js then in Navbar we can update the prop each time handleChange is executed. Something like this below.
-  // const ChildComponent = (props) => {
-  //   return <p>I'm the 1st child!</p>;
-  // };
 
   return (
     <Box className="navBox">
       <BottomNavigation
         className="Navbar"
-        value={value}
+        value={props.location}
         style={{ backgroundColor: "#a0bfde" }}
-        onChange={this.handleChange}
       >
         <BottomNavigationAction
           label="Home"
-          value=""
+          value="/"
           icon={<HomeIcon />}
           onClick={() => {
             navigate("/");
+            props.updateNav("/");
           }}
           classes={{
             iconOnly: styles.navButtonIcon,
@@ -76,10 +38,11 @@ function Navbar() {
         />
         <BottomNavigationAction
           label="Personal"
-          value="stats"
+          value="/stats"
           icon={<PersonIcon />}
           onClick={() => {
             navigate("/stats");
+            props.updateNav("/stats");
           }}
           classes={{
             iconOnly: styles.navButtonIcon,
@@ -89,10 +52,11 @@ function Navbar() {
         />
         <BottomNavigationAction
           label="Group"
-          value="summary"
+          value="/summary"
           icon={<GroupIcon />}
           onClick={() => {
             navigate("/summary");
+            props.updateNav("/summary");
           }}
           classes={{
             iconOnly: styles.navButtonIcon,
@@ -102,10 +66,11 @@ function Navbar() {
         />
         <BottomNavigationAction
           label="Settings"
-          value="settings"
+          value="/settings"
           icon={<SettingsIcon />}
           onClick={() => {
             navigate("/settings");
+            props.updateNav("/settings");
           }}
           classes={{
             iconOnly: styles.navButtonIcon,
