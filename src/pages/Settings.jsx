@@ -8,8 +8,10 @@ import {
   FormControl,
   InputLabel,
 } from "@material-ui/core";
-import Navbar from "../components/Navbar";
+import Navbar from "../components/Navbar/Navbar";
 import { DummyDataContext } from "../data/index";
+import "./App.scss";
+import styles from "./App.module.scss";
 
 function Settings({ navigate }) {
   const { users } = useContext(DummyDataContext);
@@ -29,17 +31,7 @@ function Settings({ navigate }) {
   };
 
   return (
-    <Box
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        width: "50%",
-        alignItems: "center",
-        margin: "10vh auto",
-        border: "2px solid grey",
-        padding: "5vh",
-      }}
-    >
+    <Box className="settingsBox">
       <TextField
         variant="outlined"
         value={userName}
@@ -47,11 +39,19 @@ function Settings({ navigate }) {
         disabled={editName}
       />
       <br />
-      <Button variant="contained" color="primary" onClick={handleToggle}>
+      <Button
+        variant="contained"
+        color="primary"
+        onClick={handleToggle}
+        classes={{ containedPrimary: styles.containedButtonDeepBlue }}
+      >
         {editName ? "Edit" : "Submit"}
       </Button>
       <br />
-      <FormControl variant="outlined" style={{ width: "80%" }}>
+      <FormControl
+        variant="outlined"
+        style={{ width: "80%", maxWidth: "500px" }}
+      >
         <InputLabel id="det">Select a det</InputLabel>
         <Select id="det" value={selectedDet} onChange={handleChange}>
           <MenuItem value=""></MenuItem>
@@ -67,7 +67,11 @@ function Settings({ navigate }) {
         </Select>
       </FormControl>
       <br />
-      <Button variant="contained" color="primary">
+      <Button
+        variant="contained"
+        color="primary"
+        classes={{ containedPrimary: styles.containedButtonDeepBlue }}
+      >
         Join det
       </Button>
       <br />
@@ -80,6 +84,7 @@ function Settings({ navigate }) {
             onClick={() => {
               navigate("create");
             }}
+            classes={{ containedPrimary: styles.containedButtonDeepBlue }}
           >
             Create a det
           </Button>
@@ -91,6 +96,7 @@ function Settings({ navigate }) {
             onClick={() => {
               navigate("manage");
             }}
+            classes={{ containedPrimary: styles.containedButtonDeepBlue }}
           >
             Manage a det
           </Button>

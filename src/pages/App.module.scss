@@ -1,0 +1,39 @@
+@import "./AppGlobal.scss";
+
+.containedButtonDeepBlue {
+  background-color: $colour-deepBlue !important;
+}
+.containedButtonLightBlue {
+  background-color: $colour-greyPurple !important;
+}
+
+.containedButtonDay {
+  background-color: $colour-deepBlue !important;
+}
+
+.fabButtonDeepBlue {
+  background-color: $colour-deepBlue !important;
+  color: $colour-lightBlue !important;
+}
+
+.hidden {
+  display: none !important;
+}
+//        HOME SCREEN DAY NIGHT MODE
+.containedButtonNight,
+.containedButtonLabelNight {
+  background-color: #38416f !important;
+  z-index: 2;
+  color: rgb(165, 172, 236);
+}
+
+.nightOverlay {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 58%,
+    rgba(44, 51, 87, 1) 92%,
+    rgba(56, 65, 111, 1) 99%
+  ) !important;
+  height: 100% !important;
+}

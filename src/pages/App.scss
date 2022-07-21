@@ -1,0 +1,88 @@
+@import "./AppGlobal.scss";
+
+// login, home and settings pages
+.loginBox,
+.homeBox,
+.settingsBox {
+  @extend %flexbox-center;
+  height: 85vh;
+}
+
+// sleep data display on Personal page.
+.personalBox {
+  @include scrollbars(none, none, none);
+  @extend %flexbox-expanding;
+  height: 47vh;
+  width: 100%;
+  margin-top: 20vh;
+}
+// fab on Personal page
+.fabBox {
+  position: fixed;
+  bottom: 17vh;
+  height: 10vh;
+  width: 100%;
+}
+
+// summary page. expanding data for crew members
+.summaryBox {
+  @include scrollbars(none, none, none);
+  @extend %flexbox-expanding;
+  height: 55vh;
+  width: 100%;
+  margin-top: 20vh;
+  padding-top: 10px;
+}
+
+// manageDet
+.manageDetTop {
+  @extend %flexbox-center;
+  height: 27vh;
+  width: 100%;
+  margin-top: 7vh;
+}
+.manageDetMiddle {
+  @include scrollbars(none, none, none);
+  @extend %flexbox-expanding;
+  height: 55vh;
+  width: 100%;
+}
+.manageDetBottom {
+  position: fixed;
+  bottom: 10vh;
+  height: 10vh;
+  width: 100%;
+}
+
+//      TWINKLING STARS OVERLAY
+
+.starsOverlay,
+.twinklingOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 40%;
+  display: block;
+}
+
+.starsOverlay {
+  background: url("../images/stars.png") repeat top center;
+  z-index: 0;
+}
+
+.twinklingOverlay {
+  background: transparent url("../images/twinkling.png") repeat top center;
+  z-index: 1;
+  animation: twinkling 600s linear infinite;
+}
+
+@keyframes twinkling {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -10000px 0;
+  }
+}
